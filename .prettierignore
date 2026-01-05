@@ -1,0 +1,25 @@
+# Стандартные папки
+node_modules
+.next
+dist
+build
+public
+
+# Конфиги и системные файлы
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.env*
+
+# Сгенерированные файлы деклараций TypeScript
+next-env.d.ts
+
+# Картинки и шрифты
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.webp
+*.ico
+*.woff
+*.woff2

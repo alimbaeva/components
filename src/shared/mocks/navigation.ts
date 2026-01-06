@@ -5,7 +5,7 @@ const navigationMock = [
   },
   {
     label: 'Слайдер',
-    link: './',
+    link: './slider',
   },
 ]
 

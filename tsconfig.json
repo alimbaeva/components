@@ -21,7 +21,6 @@
     ],
     "paths": {
       "@/app/*": ["./src/app/*"],
-      "@/shared/*": ["./src/shared/*"],
       "@/icons/*": ["./src/shared/icons/*"],
       "@/types/*": ["./src/shared/types/*"],
       "@/config/*": ["./src/shared/config/*"],
@@ -29,8 +28,9 @@
       "@/helpers/*": ["./src/shared/helpers/*"],
       "@/hooks/*": ["./src/shared/hooks/*"],
       "@/mocks/*": ["./src/shared/mocks/*"],
-      "@/widgets/*": ["./src/widgets/*"],
       "@/layout/*": ["./src/widgets/layout/*"],
+      "@/widgets/*": ["./src/widgets/*"],
+      "@/shared/*": ["./src/shared/*"],
       "@/views/*": ["./src/views/*"],
       "@/public/*": ["./public/*"]
     }

@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './style/globals.css'
 import type { PropsWithChildren } from 'react'
 import { generateMetadata } from './metadata'
-import { Navigation } from '@/widgets/layout/navigation/navigation'
+import { Navigation } from '@/layout/navigation/navigation'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

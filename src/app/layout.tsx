@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './style/globals.css'
 import type { PropsWithChildren } from 'react'
 import { generateMetadata } from './metadata'
+import { Navigation } from '@/layout/navigation/navigation'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,7 +22,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className='min-h-screen'>{children}</main>
+        <main className='flex min-h-screen gap-8'>
+          <Navigation />
+          {children}
+        </main>
       </body>
     </html>
   )

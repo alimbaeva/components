@@ -11,6 +11,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
@@ -19,7 +20,19 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/app/*": ["./src/app/*"],
+      "@/icons/*": ["./src/shared/icons/*"],
+      "@/types/*": ["./src/shared/types/*"],
+      "@/config/*": ["./src/shared/config/*"],
+      "@/ui/*": ["./src/shared/ui/*"],
+      "@/helpers/*": ["./src/shared/helpers/*"],
+      "@/hooks/*": ["./src/shared/hooks/*"],
+      "@/mocks/*": ["./src/shared/mocks/*"],
+      "@/layout/*": ["./src/widgets/layout/*"],
+      "@/widgets/*": ["./src/widgets/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/views/*": ["./src/views/*"],
+      "@/public/*": ["./public/*"]
     }
   },
   "include": [

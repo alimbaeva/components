@@ -20,7 +20,6 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
       "@/app/*": ["./src/app/*"],
       "@/shared/*": ["./src/shared/*"],
       "@/icons/*": ["./src/shared/icons/*"],
@@ -29,8 +28,10 @@
       "@/ui/*": ["./src/shared/ui/*"],
       "@/helpers/*": ["./src/shared/helpers/*"],
       "@/hooks/*": ["./src/shared/hooks/*"],
+      "@/mocks/*": ["./src/shared/mocks/*"],
       "@/widgets/*": ["./src/widgets/*"],
       "@/layout/*": ["./src/widgets/layout/*"],
+      "@/views/*": ["./src/views/*"],
       "@/public/*": ["./public/*"]
     }
   },

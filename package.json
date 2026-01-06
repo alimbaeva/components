@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint:fix": "next lint --fix",
+    "format:fix": "prettier --write .",
+    "fix:all": "npm run format:fix && npm run lint:fix"
   },
   "dependencies": {
     "next": "16.1.1",

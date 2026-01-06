@@ -1,22 +1,6 @@
 import type { Metadata } from 'next'
-import {
-  APPLICATION_NAME,
-  BASE_URL,
-  DESCRIPTION,
-  TITLE,
-} from './shared/config/config'
-
-type PropsMetadata = {
-  title?: string
-  description?: string
-  domain?: string
-  og_description?: string
-  twitterHandle?: string
-  canonical?: string
-  icons?: string
-  images?: string
-  siteName?: string
-}
+import { APPLICATION_NAME, BASE_URL, DESCRIPTION, TITLE } from '@/config/config'
+import type { PropsMetadata } from '../shared/types/props/metadata'
 
 export async function generateMetadata(
   props: PropsMetadata = {},

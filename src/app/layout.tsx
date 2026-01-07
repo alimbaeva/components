@@ -22,7 +22,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className='flex min-h-screen gap-8'>
+        <main className='flex min-h-screen'>
           <Navigation />
           {children}
         </main>

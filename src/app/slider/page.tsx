@@ -1,5 +1,7 @@
+import { SliderView } from '@/views/slider-view/slider-view'
+
 const SliderPage = () => {
-  return <div>SliderPage</div>
+  return <SliderView />
 }
 
 export default SliderPage

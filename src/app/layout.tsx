@@ -22,7 +22,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className='flex min-h-screen'>
+        <main className='flex min-h-screen w-full flex-col lg:flex-row'>
           <Navigation />
           {children}
         </main>

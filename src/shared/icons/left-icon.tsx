@@ -4,7 +4,7 @@ import type { ComponentProps } from 'react'
 const LeftIcon = ({ className }: ComponentProps<'svg'>) => {
   return (
     <svg
-      className={clsx(className)}
+      className={clsx('shrink-0', className)}
       xmlns='http://www.w3.org/2000/svg'
       x='0px'
       y='0px'

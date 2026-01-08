@@ -9,8 +9,8 @@ const Navigation = () => {
   const pathname = usePathname()
 
   return (
-    <section>
-      <nav className='h-full w-75 py-6 shadow-[10px_0_15px_-3px_rgba(0,0,0,0.1)]'>
+    <section className='flex items-end justify-end'>
+      <nav className='w-[80%] py-6 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] lg:h-full lg:w-75 lg:shadow-[10px_0_15px_-3px_rgba(0,0,0,0.1)]'>
         <ul>
           {navigationMock.map(({ label, link }, ind) => {
             const isActive = pathname === link

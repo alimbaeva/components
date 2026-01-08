@@ -3,7 +3,7 @@ import { FullscreenCarousel } from '@/widgets/slider/embla-carousel/fullscreen-c
 
 const SliderView = () => {
   return (
-    <div className='flex flex-col'>
+    <div className='flex w-full flex-col'>
       <FullscreenCarousel />
       <BoundedSlider />
     </div>

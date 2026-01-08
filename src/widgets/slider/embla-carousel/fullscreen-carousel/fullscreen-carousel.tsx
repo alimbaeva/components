@@ -35,7 +35,7 @@ const FullscreenCarousel = () => {
                 className='relative flex h-full w-full min-w-0 flex-[0_0_100%] items-center justify-center'
               >
                 <Image src={link} alt='' fill className='object-cover' />
-                <div className='position bg-overlay-black-300 top-0 left-0 z-10 size-full p-4'>
+                <div className='bg-overlay-black-300 absolute top-0 left-0 z-10 size-full p-4'>
                   <Paragraph
                     variant='span'
                     type='medium'

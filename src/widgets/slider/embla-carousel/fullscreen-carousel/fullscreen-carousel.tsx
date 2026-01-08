@@ -26,7 +26,7 @@ const FullscreenCarousel = () => {
 
   return (
     <Container>
-      <div className='relative h-75 w-125 overflow-hidden rounded-2xl'>
+      <div className='relative h-50 w-75 overflow-hidden rounded-2xl md:h-75 md:w-125'>
         <div className='h-full w-full' ref={emblaRef}>
           <div className='flex size-full'>
             {slidesMock.map(({ id, link }, ind) => (

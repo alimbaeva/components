@@ -20,7 +20,7 @@ const Title = (props: Props) => {
   const {
     text,
     variant = 'h2',
-    type = 'medium',
+    type = 'semibold',
     color = 'dark',
     href,
     target,

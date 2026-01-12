@@ -1,6 +1,5 @@
 'use client'
 
-import { Container } from '@/ui/container/container'
 import { useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { slidesMock } from '@/mocks/slides'
@@ -8,9 +7,8 @@ import Image from 'next/image'
 import { Paragraph } from '@/ui/paragraph/paragraph'
 import { LeftIcon } from '@/icons/left-icon'
 import { RightIcon } from '@/icons/right-icon'
-import { Title } from '@/ui/title/title'
 import { fullscreenCarouselMock, titleLinks } from '@/mocks/local-text'
-import { Description } from '@/ui/description/description'
+import { BlockWithDescription } from '@/widgets/block/block-with-description'
 
 const FullscreenCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -28,8 +26,11 @@ const FullscreenCarousel = () => {
   )
 
   return (
-    <Container>
-      <Title text={fullscreenCarouselMock.title} />
+    <BlockWithDescription
+      titleLinks={titleLinks.gitHub}
+      title={fullscreenCarouselMock.title}
+      descriptionContent={fullscreenCarouselMock.descriptionContent}
+    >
       <div className='relative aspect-5/2 w-full overflow-hidden rounded-2xl'>
         <div className='h-full w-full' ref={emblaRef}>
           <div className='flex size-full'>
@@ -71,16 +72,7 @@ const FullscreenCarousel = () => {
           <RightIcon className='h-5 w-5 fill-neutral-800' />
         </button>
       </div>
-      <Description description={fullscreenCarouselMock.descriptionContent} />
-      <Paragraph
-        text={titleLinks.gitHub}
-        variant='a'
-        color='link'
-        type='medium'
-        target='_blank'
-        href={fullscreenCarouselMock.linkToCode}
-      />
-    </Container>
+    </BlockWithDescription>
   )
 }
 

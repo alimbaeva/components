@@ -1,5 +1,7 @@
 const fullscreenCarouselMock = {
   title: 'Одиночный слайдер с внутренней навигацией',
+  linkToCode:
+    'https://github.com/alimbaeva/components/blob/main/src/widgets/slider/embla-carousel/fullscreen-carousel/fullscreen-carousel.tsx',
   descriptionContent: `
         <h3>Техническая архитектура и особенности слайдера</h3>
         <p>Компонент реализован с использованием <strong>Embla Carousel</strong> и оптимизирован под стандарты <strong>Next.js 16</strong>. Основные характеристики:</p>
@@ -25,4 +27,8 @@ const fullscreenCarouselMock = {
     `,
 }
 
-export { fullscreenCarouselMock }
+const titleLinks = {
+  gitHub: 'Смотреть код на GitHub',
+}
+
+export { fullscreenCarouselMock, titleLinks }

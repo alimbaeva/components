@@ -12,6 +12,7 @@ const STANDARD_TYPE = {
 const COLOR = {
   dark: 'text-neutral-100',
   light: 'text-neutral-800',
+  link: 'text-secondary-700 hover:text-secondary-300',
   custom: '',
 }
 

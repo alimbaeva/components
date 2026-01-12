@@ -9,7 +9,7 @@ import { Paragraph } from '@/ui/paragraph/paragraph'
 import { LeftIcon } from '@/icons/left-icon'
 import { RightIcon } from '@/icons/right-icon'
 import { Title } from '@/ui/title/title'
-import { fullscreenCarouselMock } from '@/mocks/local-text'
+import { fullscreenCarouselMock, titleLinks } from '@/mocks/local-text'
 import { Description } from '@/ui/description/description'
 
 const FullscreenCarousel = () => {
@@ -72,6 +72,14 @@ const FullscreenCarousel = () => {
         </button>
       </div>
       <Description description={fullscreenCarouselMock.descriptionContent} />
+      <Paragraph
+        text={titleLinks.gitHub}
+        variant='a'
+        color='link'
+        type='medium'
+        target='_blank'
+        href={fullscreenCarouselMock.linkToCode}
+      />
     </Container>
   )
 }

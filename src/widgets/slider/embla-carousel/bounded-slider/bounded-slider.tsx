@@ -1,8 +1,11 @@
 'use client'
 
+import { boundedSliderMock, titleLinks } from '@/mocks/local-text'
 import { slidesMock } from '@/mocks/slides'
 import { Container } from '@/ui/container/container'
+import { Description } from '@/ui/description/description'
 import { Paragraph } from '@/ui/paragraph/paragraph'
+import { Title } from '@/ui/title/title'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 
@@ -11,11 +14,13 @@ const BoundedSlider = () => {
     loop: false,
     containScroll: 'trimSnaps',
     align: 'start',
+    dragFree: true,
   })
 
   return (
     <Container>
-      <div className='w-full xl:max-w-200'>
+      <Title text={boundedSliderMock.title} />
+      <div className='w-full'>
         <div
           className='w-full overflow-hidden rounded-2xl bg-gray-100 xl:max-w-200'
           ref={emblaRef}
@@ -24,7 +29,7 @@ const BoundedSlider = () => {
             {slidesMock.map(({ id, link }, ind) => (
               <div
                 key={id}
-                className='relative h-48 w-80 min-w-0 shrink-0 overflow-hidden rounded-2xl'
+                className='relative aspect-video w-80 min-w-0 shrink-0 overflow-hidden rounded-2xl'
               >
                 <Image
                   alt=''
@@ -46,6 +51,15 @@ const BoundedSlider = () => {
           </div>
         </div>
       </div>
+      <Description description={boundedSliderMock.descriptionContent} />
+      <Paragraph
+        text={titleLinks.gitHub}
+        variant='a'
+        color='link'
+        type='medium'
+        target='_blank'
+        href={boundedSliderMock.linkToCode}
+      />
     </Container>
   )
 }

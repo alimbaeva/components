@@ -4,6 +4,7 @@ type Props = {
   id?: string
   className?: string
   variant?: 'div' | 'section'
+  size?: 'm' | 'custom'
 }
 
 export type { Props }

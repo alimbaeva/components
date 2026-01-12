@@ -10,6 +10,7 @@ import { LeftIcon } from '@/icons/left-icon'
 import { RightIcon } from '@/icons/right-icon'
 import { Title } from '@/ui/title/title'
 import { fullscreenCarouselMock } from '@/mocks/local-text'
+import { Description } from '@/ui/description/description'
 
 const FullscreenCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -29,7 +30,7 @@ const FullscreenCarousel = () => {
   return (
     <Container>
       <Title text={fullscreenCarouselMock.title} />
-      <div className='relative h-50 w-75 overflow-hidden rounded-2xl md:h-75 md:w-125'>
+      <div className='relative aspect-5/2 w-full overflow-hidden rounded-2xl'>
         <div className='h-full w-full' ref={emblaRef}>
           <div className='flex size-full'>
             {slidesMock.map(({ id, link }, ind) => (
@@ -37,7 +38,13 @@ const FullscreenCarousel = () => {
                 key={id}
                 className='relative flex h-full w-full min-w-0 flex-[0_0_100%] items-center justify-center'
               >
-                <Image src={link} alt='' fill className='object-cover' />
+                <Image
+                  priority={ind === 0}
+                  src={link}
+                  alt='slide image'
+                  fill
+                  className='object-cover'
+                />
                 <div className='bg-overlay-black-300 absolute top-0 left-0 z-10 size-full p-4'>
                   <Paragraph
                     variant='span'
@@ -64,6 +71,7 @@ const FullscreenCarousel = () => {
           <RightIcon className='h-5 w-5 fill-neutral-800' />
         </button>
       </div>
+      <Description description={fullscreenCarouselMock.descriptionContent} />
     </Container>
   )
 }

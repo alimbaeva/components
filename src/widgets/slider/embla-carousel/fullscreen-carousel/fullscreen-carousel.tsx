@@ -8,6 +8,8 @@ import Image from 'next/image'
 import { Paragraph } from '@/ui/paragraph/paragraph'
 import { LeftIcon } from '@/icons/left-icon'
 import { RightIcon } from '@/icons/right-icon'
+import { Title } from '@/ui/title/title'
+import { fullscreenCarouselMock } from '@/mocks/local-text'
 
 const FullscreenCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -26,6 +28,7 @@ const FullscreenCarousel = () => {
 
   return (
     <Container>
+      <Title text={fullscreenCarouselMock.title} />
       <div className='relative h-50 w-75 overflow-hidden rounded-2xl md:h-75 md:w-125'>
         <div className='h-full w-full' ref={emblaRef}>
           <div className='flex size-full'>

@@ -26,6 +26,7 @@ const fullscreenCarouselMock = {
         </ul>
     `,
 }
+
 const boundedSliderMock = {
   title: 'Ограниченный слайдер - Лента карточек',
   linkToCode:
@@ -79,8 +80,66 @@ const boundedSliderMock = {
     `,
 }
 
+const boundedControlledSlider = {
+  title: 'Контролируемую реализацию Embla Carousel',
+  linkToCode:
+    'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/embla-carousel/bounded-controlled-slider/bounded-controlled-slider.tsx',
+  descriptionContent: `
+        <h3>Технические особенности и архитектура</h3>
+        <p>
+        Компонент <strong>BoundedControlledSlider</strong> представляет собой управляемую реализацию Embla Carousel. Это горизонтальная лента, оптимизированная для плавной навигации по группе карточек с использованием внешнего состояния (React State) для синхронизации элементов управления.
+        </p>
+
+        <h3>1. Конфигурация и логика Embla</h3>
+        <ul>
+        <li>
+            <strong>Инерционная навигация (<code>dragFree: true</code>):</strong> Позволяет пользователю свободно «пролистывать» контент. Слайдер не фиксируется жестко на каждом шаге, а плавно замедляется, что создает естественный пользовательский опыт (Native-like feel).
+        </li>
+        <li>
+            <strong>Умное ограничение (<code>containScroll: 'trimSnaps'</code>):</strong> Автоматически обрезает лишние пустые зоны в начале и в конце списка. Это гарантирует, что первый и последний слайды всегда будут прижаты к краям контейнера.
+        </li>
+        <li>
+            <strong>Синхронизация состояния:</strong> Реализована через событие <code>select</code>. Состояния <code>canScrollPrev</code> и <code>canScrollNext</code> динамически блокируют или активируют кнопки управления, предотвращая пустые клики.
+        </li>
+        </ul>
+
+        <h3>2. Верстка и адаптивность</h3>
+        <ul>
+        <li>
+            <strong>Геометрия карточек (<code>aspect-video</code>):</strong> Использование фиксированного соотношения сторон 16:9 через Tailwind-класс гарантирует, что все слайды будут иметь одинаковую высоту независимо от загруженного изображения.
+        </li>
+        <li>
+            <strong>Гибкость элементов (<code>shrink-0</code>):</strong> Запрещает Flex-контейнеру сжимать карточки. Каждый элемент сохраняет заданную ширину (<code>w-80</code>), формируя стабильную область прокрутки.
+        </li>
+        <li>
+            <strong>Визуальный индикатор (Active Dot):</strong> Пагинация реализована с акцентом на активный элемент. Текущий индекс выделяется увеличенной шириной (<code>w-8</code>) и цветом, обеспечивая понятную обратную связь.
+        </li>
+        </ul>
+
+        <h3>3. Работа с медиа (Next.js Image)</h3>
+        <ul>
+        <li>
+            <strong>Контейнерное заполнение (<code>fill</code>):</strong> Изображения используют стратегию заполнения родителя. В сочетании с <code>object-cover</code> это позволяет корректно отображать фотографии любого формата без нарушения пропорций верстки.
+        </li>
+        <li>
+            <strong>Оптимизация:</strong> Использование компонента Image обеспечивает автоматическую ленивую загрузку (lazy loading) и генерацию современных форматов (WebP/Avif) на лету.
+        </li>
+        </ul>
+
+        <h3>Критические нюансы (Important notes):</h3>
+        <p>
+        Слайдер является <strong>клиентским компонентом</strong>, так как использует хуки <code>useEffect</code> и <code>useCallback</code>. При динамическом изменении количества слайдов API карусели автоматически вызывает <code>reInit</code>, что корректно пересчитывает доступность прокрутки. Рекомендуется следить за тем, чтобы <code>slidesMock</code> не был пустым во избежание рендеринга пустой навигации.
+        </p>
+    `,
+}
+
 const titleLinks = {
   gitHub: 'Смотреть код на GitHub',
 }
 
-export { fullscreenCarouselMock, boundedSliderMock, titleLinks }
+export {
+  fullscreenCarouselMock,
+  boundedSliderMock,
+  boundedControlledSlider,
+  titleLinks,
+}

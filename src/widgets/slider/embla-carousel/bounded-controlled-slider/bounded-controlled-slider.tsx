@@ -53,6 +53,7 @@ const BoundedControlledSlider = () => {
       title={boundedControlledSlider.title}
       descriptionContent={boundedControlledSlider.descriptionContent}
       titleLinks={titleLinks.gitHub}
+      linkToCode={boundedControlledSlider.linkToCode}
     >
       <div className='w-full max-w-3xl p-4'>
         <div className='overflow-hidden rounded-2xl bg-gray-100' ref={emblaRef}>

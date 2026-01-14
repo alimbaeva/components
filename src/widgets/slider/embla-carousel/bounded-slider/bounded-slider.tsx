@@ -20,6 +20,7 @@ const BoundedSlider = () => {
       title={boundedSliderMock.title}
       descriptionContent={boundedSliderMock.descriptionContent}
       titleLinks={titleLinks.gitHub}
+      linkToCode={boundedSliderMock.linkToCode}
     >
       <div className='w-full'>
         <div

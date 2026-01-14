@@ -20,6 +20,7 @@ const BlockWithDescription = (props: Props) => {
           type='medium'
           target='_blank'
           href={linkToCode}
+          className='cursor-pointer'
         />
       )}
     </Container>

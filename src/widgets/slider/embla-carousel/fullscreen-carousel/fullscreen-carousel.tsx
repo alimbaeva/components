@@ -30,6 +30,7 @@ const FullscreenCarousel = () => {
       titleLinks={titleLinks.gitHub}
       title={fullscreenCarouselMock.title}
       descriptionContent={fullscreenCarouselMock.descriptionContent}
+      linkToCode={fullscreenCarouselMock.linkToCode}
     >
       <div className='relative aspect-5/2 w-full overflow-hidden rounded-2xl'>
         <div className='h-full w-full' ref={emblaRef}>

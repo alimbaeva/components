@@ -83,7 +83,7 @@ const boundedSliderMock = {
 const boundedControlledSlider = {
   title: 'Контролируемую реализацию Embla Carousel',
   linkToCode:
-    'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/embla-carousel/bounded-controlled-slider',
+    'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/embla-carousel/bounded-controlled-slider/bounded-controlled-slider.tsx',
   descriptionContent: `
         <h3>Технические особенности и архитектура</h3>
         <p>

@@ -6,9 +6,8 @@ const LeftIcon = ({ className }: ComponentProps<'svg'>) => {
     <svg
       className={clsx('shrink-0', className)}
       xmlns='http://www.w3.org/2000/svg'
-      x='0px'
-      y='0px'
       viewBox='0 0 792.082 792.082'
+      fill='currentColor'
     >
       <path
         d='M317.896,396.024l304.749-276.467c27.36-27.36,27.36-71.677,0-99.037s-71.677-27.36-99.036,0L169.11,342.161

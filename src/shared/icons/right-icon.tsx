@@ -6,8 +6,7 @@ const RightIcon = ({ className }: ComponentProps<'svg'>) => {
     <svg
       className={clsx('shrink-0', className)}
       xmlns='http://www.w3.org/2000/svg'
-      x='0px'
-      y='0px'
+      fill='currentColor'
       viewBox='0 0 792.082 792.082'
     >
       <path

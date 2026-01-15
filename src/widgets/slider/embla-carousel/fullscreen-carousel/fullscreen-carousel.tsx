@@ -9,6 +9,7 @@ import { LeftIcon } from '@/icons/left-icon'
 import { RightIcon } from '@/icons/right-icon'
 import { fullscreenCarouselMock, titleLinks } from '@/mocks/local-text'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
+import { Button } from '@/ui/button/button'
 
 const FullscreenCarousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -60,18 +61,24 @@ const FullscreenCarousel = () => {
           </div>
         </div>
 
-        <button
-          className='absolute top-1/2 left-4 z-10 flex -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/20 p-3 transition-colors hover:bg-white/40'
+        <Button
+          rounded='full'
+          color='glass'
+          size='circle_48'
+          className='absolute top-1/2 left-4 z-10 -translate-y-1/2'
           onClick={scrollPrev}
         >
-          <LeftIcon className='h-5 w-5 fill-neutral-800' />
-        </button>
-        <button
-          className='absolute top-1/2 right-4 z-10 flex -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/20 p-3 transition-colors hover:bg-white/40'
+          <LeftIcon className='h-3 w-3 fill-neutral-800 md:h-5 md:w-5' />
+        </Button>
+        <Button
+          rounded='full'
+          color='glass'
+          className='absolute top-1/2 right-4 z-10 -translate-y-1/2'
+          size='circle_48'
           onClick={scrollNext}
         >
-          <RightIcon className='h-5 w-5 fill-neutral-800' />
-        </button>
+          <RightIcon className='h-3 w-3 fill-neutral-800 md:h-5 md:w-5' />
+        </Button>
       </div>
     </BlockWithDescription>
   )

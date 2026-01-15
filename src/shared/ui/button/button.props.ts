@@ -5,7 +5,7 @@ type Props = ComponentProps<'button'> &
   PropsWithChildren & {
     variant?: 'button' | 'a'
     rounded?: 'full' | 'custom'
-    color?: 'glass' | 'custom'
+    color?: 'glass' | 'green' | 'custom'
     blur?: 'sm' | 'custom'
     size?: 'circle_48' | 'custom'
     gap?: 2 | 'custom'

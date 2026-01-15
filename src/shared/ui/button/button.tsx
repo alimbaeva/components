@@ -17,7 +17,8 @@ const CUSTOM_SIZE = {
 }
 
 const CUSTOM_COLOR = {
-  glass: 'bg-white/20 transition-colors hover:bg-white/40',
+  glass: 'bg-white/20 transition-colors hover:bg-white/40 transition-all',
+  green: 'bg-positive-800 hover:bg-positive-800/40 transition-all',
   custom: '',
 }
 

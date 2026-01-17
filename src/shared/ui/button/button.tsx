@@ -11,7 +11,13 @@ const CUSTOM_GAP = {
   custom: '',
 }
 
+const CUSTOM_PADDING = {
+  2: 'p-2',
+  custom: '',
+}
+
 const CUSTOM_SIZE = {
+  w_full: 'w-full',
   circle_48: 'h-8 w-8 md:h-12 md:w-12',
   custom: '',
 }
@@ -23,6 +29,8 @@ const CUSTOM_COLOR = {
 }
 
 const CUSTOM_ROUNDED = {
+  xl_t: 'rounded-t-xl',
+  xl_b: 'rounded-b-xl',
   full: 'rounded-full',
   custom: '',
 }
@@ -39,6 +47,7 @@ const Button = (props: Props) => {
     blur = 'custom',
     color = 'custom',
     rounded = 'custom',
+    padding = 'custom',
     variant = 'button',
     type = 'button',
   } = props
@@ -54,6 +63,7 @@ const Button = (props: Props) => {
         CUSTOM_BLUR[blur],
         CUSTOM_GAP[gap],
         CUSTOM_SIZE[size],
+        CUSTOM_PADDING[padding],
         className,
       )}
       onClick={onClick}

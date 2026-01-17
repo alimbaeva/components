@@ -4,10 +4,11 @@ type Props = ComponentProps<'button'> &
   ComponentProps<'a'> &
   PropsWithChildren & {
     variant?: 'button' | 'a'
-    rounded?: 'full' | 'custom'
+    rounded?: 'full' | 'xl_b' | 'xl_t' | 'custom'
     color?: 'glass' | 'green' | 'custom'
     blur?: 'sm' | 'custom'
-    size?: 'circle_48' | 'custom'
+    size?: 'circle_48' | 'w_full' | 'custom'
+    padding?: 2 | 'custom'
     gap?: 2 | 'custom'
     className?: string
   }

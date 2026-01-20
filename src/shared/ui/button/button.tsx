@@ -18,6 +18,7 @@ const CUSTOM_PADDING = {
 
 const CUSTOM_SIZE = {
   w_full: 'w-full',
+  h_full: 'h-full',
   circle_48: 'h-8 w-8 md:h-12 md:w-12',
   custom: '',
 }
@@ -31,6 +32,8 @@ const CUSTOM_COLOR = {
 const CUSTOM_ROUNDED = {
   xl_t: 'rounded-t-xl',
   xl_b: 'rounded-b-xl',
+  xl_r: 'rounded-r-xl',
+  xl_l: 'rounded-l-xl',
   full: 'rounded-full',
   custom: '',
 }
@@ -50,6 +53,7 @@ const Button = (props: Props) => {
     padding = 'custom',
     variant = 'button',
     type = 'button',
+    disabled,
   } = props
 
   const Tag = variant
@@ -64,9 +68,11 @@ const Button = (props: Props) => {
         CUSTOM_GAP[gap],
         CUSTOM_SIZE[size],
         CUSTOM_PADDING[padding],
+        disabled && 'pointer-events-none cursor-not-allowed opacity-50',
         className,
       )}
       onClick={onClick}
+      disabled={disabled}
       href={href}
       target={target}
       type={type ?? 'button'}

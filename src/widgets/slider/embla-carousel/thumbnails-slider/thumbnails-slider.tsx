@@ -21,6 +21,8 @@ const ThumbnailsSlider = () => {
   })
 
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(false)
 
   const onThumbClick = useCallback(
     (index: number) => {
@@ -34,6 +36,8 @@ const ThumbnailsSlider = () => {
     if (!mainApi || !thumbApi) return
     const index = mainApi.selectedScrollSnap()
     setSelectedIndex(index)
+    setCanScrollPrev(mainApi.canScrollPrev())
+    setCanScrollNext(mainApi.canScrollNext())
     thumbApi.scrollTo(index)
   }, [mainApi, thumbApi])
 
@@ -51,14 +55,15 @@ const ThumbnailsSlider = () => {
       descriptionContent={thumbnailsSliderMock.descriptionContent}
       linkToCode={thumbnailsSliderMock.linkToCode}
     >
-      <div className='flex h-125 w-full max-w-5xl gap-4 bg-white p-4'>
-        <div className='flex w-32 flex-col gap-2'>
+      <div className='flex h-125 w-full max-w-5xl gap-4 bg-white sm:p-4'>
+        <div className='hidden w-32 flex-col gap-2 sm:flex'>
           <Button
             color='green'
             padding={2}
             rounded='xl_t'
             size='w_full'
             onClick={() => mainApi?.scrollPrev()}
+            disabled={!canScrollPrev}
           >
             <UpIcon className='h-5 w-5 fill-white' />
           </Button>
@@ -94,6 +99,7 @@ const ThumbnailsSlider = () => {
             rounded='xl_b'
             size='w_full'
             onClick={() => mainApi?.scrollNext()}
+            disabled={!canScrollNext}
           >
             <DownIcon className='h-5 w-5 fill-white' />
           </Button>

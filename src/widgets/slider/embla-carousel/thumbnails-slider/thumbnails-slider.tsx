@@ -17,7 +17,10 @@ const ThumbnailsSlider = () => {
   const [thumbRef, thumbApi] = useEmblaCarousel({
     containScroll: 'keepSnaps',
     dragFree: true,
-    axis: 'y',
+    axis: 'x',
+    breakpoints: {
+      '(min-width: 640px)': { axis: 'y' },
+    },
   })
 
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -55,13 +58,33 @@ const ThumbnailsSlider = () => {
       descriptionContent={thumbnailsSliderMock.descriptionContent}
       linkToCode={thumbnailsSliderMock.linkToCode}
     >
-      <div className='flex h-125 w-full max-w-5xl gap-4 bg-white sm:p-4'>
-        <div className='hidden w-32 flex-col gap-2 sm:flex'>
+      <div className='flex h-auto w-full max-w-5xl flex-col gap-4 bg-white p-2 sm:h-125 sm:flex-row sm:p-4'>
+        <div
+          className='relative order-1 aspect-video flex-1 overflow-hidden rounded-3xl bg-gray-100 sm:order-2 sm:aspect-auto'
+          ref={mainRef}
+        >
+          <div className='flex h-full'>
+            {slidesMock.map(({ id, link }, ind) => (
+              <div key={id} className='relative h-full min-w-full shrink-0'>
+                <Image
+                  src={link}
+                  fill
+                  className='object-cover'
+                  alt=''
+                  priority={ind === 0}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className='order-2 flex w-full flex-col gap-2 sm:order-1 sm:w-32'>
           <Button
             color='green'
             padding={2}
             rounded='xl_t'
             size='w_full'
+            className='hidden sm:flex'
             onClick={() => mainApi?.scrollPrev()}
             disabled={!canScrollPrev}
           >
@@ -69,13 +92,14 @@ const ThumbnailsSlider = () => {
           </Button>
 
           <div className='flex-1 overflow-hidden' ref={thumbRef}>
-            <div className='flex h-full flex-col gap-3'>
+            <div className='flex h-full flex-row gap-3 sm:flex-col'>
               {slidesMock.map(({ id, link }, ind) => (
                 <div
                   key={id}
                   onClick={() => onThumbClick(ind)}
                   className={clsx(
-                    'relative aspect-square w-full shrink-0 cursor-pointer overflow-hidden rounded-xl border-4 transition-all',
+                    'relative shrink-0 cursor-pointer overflow-hidden rounded-xl border-4 transition-all',
+                    'h-16 w-24 sm:aspect-square sm:h-auto sm:w-full',
                     ind === selectedIndex
                       ? 'border-positive-800 scale-95'
                       : 'border-transparent opacity-60',
@@ -98,30 +122,12 @@ const ThumbnailsSlider = () => {
             padding={2}
             rounded='xl_b'
             size='w_full'
+            className='hidden sm:flex'
             onClick={() => mainApi?.scrollNext()}
             disabled={!canScrollNext}
           >
             <DownIcon className='h-5 w-5 fill-white' />
           </Button>
-        </div>
-
-        <div
-          className='relative flex-1 overflow-hidden rounded-3xl bg-gray-100'
-          ref={mainRef}
-        >
-          <div className='flex h-full'>
-            {slidesMock.map(({ id, link }, ind) => (
-              <div key={id} className='relative h-full min-w-full shrink-0'>
-                <Image
-                  src={link}
-                  fill
-                  className='object-cover'
-                  alt=''
-                  priority={ind === 0}
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </BlockWithDescription>

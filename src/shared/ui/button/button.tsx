@@ -18,6 +18,7 @@ const CUSTOM_PADDING = {
 
 const CUSTOM_SIZE = {
   w_full: 'w-full',
+
   h_full: 'h-full',
   circle_48: 'h-8 w-8 md:h-12 md:w-12',
   custom: '',

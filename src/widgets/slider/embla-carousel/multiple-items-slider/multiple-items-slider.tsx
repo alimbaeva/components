@@ -13,7 +13,10 @@ const MultipleItemsSlider = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     align: 'start',
-    slidesToScroll: 2,
+    slidesToScroll: 1,
+    breakpoints: {
+      '(min-width: 640px)': { slidesToScroll: 2 },
+    },
   })
 
   const [canScrollPrev, setCanScrollPrev] = useState(false)
@@ -38,7 +41,7 @@ const MultipleItemsSlider = () => {
       descriptionContent={multipleItemsSlider.descriptionContent}
       linkToCode={multipleItemsSlider.linkToCode}
     >
-      <div className='w-full max-w-4xl'>
+      <div className='w-full max-w-6xl px-4'>
         <div className='mb-4 flex justify-end gap-2'>
           <Button
             onClick={() => emblaApi?.scrollPrev()}
@@ -66,7 +69,7 @@ const MultipleItemsSlider = () => {
         <div className='overflow-hidden rounded-xl' ref={emblaRef}>
           <div className='-ml-4 flex'>
             {slidesMock.map(({ id, link }, ind) => (
-              <div key={id} className='min-w-[50%] shrink-0 pl-4'>
+              <div key={id} className='min-w-full shrink-0 pl-4 sm:min-w-[50%]'>
                 <div className='relative h-64 w-full overflow-hidden rounded-xl bg-gray-100'>
                   <Image
                     src={link}
@@ -74,7 +77,7 @@ const MultipleItemsSlider = () => {
                     fill
                     priority={ind < 2}
                     className='object-cover'
-                    sizes='(max-width: 768px) 100vw, 50vw'
+                    sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                   />
                 </div>
               </div>

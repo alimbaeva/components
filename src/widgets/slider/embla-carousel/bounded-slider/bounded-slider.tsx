@@ -1,6 +1,6 @@
 'use client'
 
-import { boundedSliderMock, titleLinks } from '@/mocks/local-text'
+import { boundedSliderMock, titleLinksMock } from '@/mocks/local-text'
 import { slidesMock } from '@/mocks/slides'
 import { Paragraph } from '@/ui/paragraph/paragraph'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
@@ -19,7 +19,7 @@ const BoundedSlider = () => {
     <BlockWithDescription
       title={boundedSliderMock.title}
       descriptionContent={boundedSliderMock.descriptionContent}
-      titleLinks={titleLinks.gitHub}
+      titleLinks={titleLinksMock.gitHub}
       linkToCode={boundedSliderMock.linkToCode}
     >
       <div className='w-full'>

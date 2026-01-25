@@ -5,7 +5,7 @@ import AutoScroll from 'embla-carousel-auto-scroll'
 import Image from 'next/image'
 import { slidesMock } from '@/mocks/slides'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
-import { infiniteAutoplaySliderMock, titleLinks } from '@/mocks/local-text'
+import { infiniteAutoplaySliderMock, titleLinksMock } from '@/mocks/local-text'
 
 const InfiniteAutoplaySlider = () => {
   const [emblaRef] = useEmblaCarousel(
@@ -24,7 +24,7 @@ const InfiniteAutoplaySlider = () => {
 
   return (
     <BlockWithDescription
-      titleLinks={titleLinks.gitHub}
+      titleLinks={titleLinksMock.gitHub}
       title={infiniteAutoplaySliderMock.title}
       descriptionContent={infiniteAutoplaySliderMock.descriptionContent}
       linkToCode={infiniteAutoplaySliderMock.linkToCode}

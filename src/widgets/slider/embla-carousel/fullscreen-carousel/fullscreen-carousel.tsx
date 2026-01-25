@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { Paragraph } from '@/ui/paragraph/paragraph'
 import { LeftIcon } from '@/icons/left-icon'
 import { RightIcon } from '@/icons/right-icon'
-import { fullscreenCarouselMock, titleLinks } from '@/mocks/local-text'
+import { fullscreenCarouselMock, titleLinksMock } from '@/mocks/local-text'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
 import { Button } from '@/ui/button/button'
 
@@ -28,7 +28,7 @@ const FullscreenCarousel = () => {
 
   return (
     <BlockWithDescription
-      titleLinks={titleLinks.gitHub}
+      titleLinks={titleLinksMock.gitHub}
       title={fullscreenCarouselMock.title}
       descriptionContent={fullscreenCarouselMock.descriptionContent}
       linkToCode={fullscreenCarouselMock.linkToCode}

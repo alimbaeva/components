@@ -80,7 +80,7 @@ const boundedSliderMock = {
     `,
 }
 
-const boundedControlledSlider = {
+const boundedControlledSliderMock = {
   title: 'Контролируемую реализацию Embla Carousel',
   linkToCode:
     'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/embla-carousel/bounded-controlled-slider/bounded-controlled-slider.tsx',
@@ -207,7 +207,7 @@ const thumbnailsSliderMock = {
     `,
 }
 
-const multipleItemsSlider = {
+const multipleItemsSliderMock = {
   title: 'Групповой слайдер в Embla Carousel',
   linkToCode:
     'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/embla-carousel/multiple-items-slider/multiple-items-slider.tsx',
@@ -270,7 +270,7 @@ const multipleItemsSlider = {
 }
 
 const infiniteAutoplaySliderMock = {
-  title: '<Бесконечного плавного слайдера (эффект Marquee)',
+  title: 'Бесконечного плавного слайдера (эффект Marquee)',
   linkToCode:
     'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/embla-carousel/infinite-autoplay-slider/infinite-autoplay-slider.tsx',
   descriptionContent: `
@@ -314,16 +314,16 @@ const infiniteAutoplaySliderMock = {
 `,
 }
 
-const titleLinks = {
+const titleLinksMock = {
   gitHub: 'Смотреть код на GitHub',
 }
 
 export {
   fullscreenCarouselMock,
   boundedSliderMock,
-  boundedControlledSlider,
+  boundedControlledSliderMock,
   thumbnailsSliderMock,
-  titleLinks,
-  multipleItemsSlider,
+  titleLinksMock,
+  multipleItemsSliderMock,
   infiniteAutoplaySliderMock,
 }

@@ -7,7 +7,7 @@ import { slidesMock } from '@/mocks/slides'
 import { Button } from '@/ui/button/button'
 import { UpIcon } from '@/icons/up-icon'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
-import { multipleItemsSlider, titleLinks } from '@/mocks/local-text'
+import { multipleItemsSliderMock, titleLinksMock } from '@/mocks/local-text'
 
 const MultipleItemsSlider = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -36,10 +36,10 @@ const MultipleItemsSlider = () => {
 
   return (
     <BlockWithDescription
-      titleLinks={titleLinks.gitHub}
-      title={multipleItemsSlider.title}
-      descriptionContent={multipleItemsSlider.descriptionContent}
-      linkToCode={multipleItemsSlider.linkToCode}
+      titleLinks={titleLinksMock.gitHub}
+      title={multipleItemsSliderMock.title}
+      descriptionContent={multipleItemsSliderMock.descriptionContent}
+      linkToCode={multipleItemsSliderMock.linkToCode}
     >
       <div className='w-full max-w-6xl px-4'>
         <div className='mb-4 flex justify-end gap-2'>

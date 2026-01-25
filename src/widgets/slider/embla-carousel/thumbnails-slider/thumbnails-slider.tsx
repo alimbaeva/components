@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import { UpIcon } from '@/icons/up-icon'
 import { DownIcon } from '@/icons/down-icon'
 import { Button } from '@/ui/button/button'
-import { thumbnailsSliderMock, titleLinks } from '@/mocks/local-text'
+import { thumbnailsSliderMock, titleLinksMock } from '@/mocks/local-text'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
 
 const ThumbnailsSlider = () => {
@@ -53,7 +53,7 @@ const ThumbnailsSlider = () => {
 
   return (
     <BlockWithDescription
-      titleLinks={titleLinks.gitHub}
+      titleLinks={titleLinksMock.gitHub}
       title={thumbnailsSliderMock.title}
       descriptionContent={thumbnailsSliderMock.descriptionContent}
       linkToCode={thumbnailsSliderMock.linkToCode}

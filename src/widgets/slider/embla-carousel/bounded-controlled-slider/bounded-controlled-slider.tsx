@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { LeftIcon } from '@/icons/left-icon'
 import { RightIcon } from '@/icons/right-icon'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
-import { boundedControlledSlider, titleLinks } from '@/mocks/local-text'
+import { boundedControlledSliderMock, titleLinksMock } from '@/mocks/local-text'
 import { Button } from '@/ui/button/button'
 import clsx from 'clsx'
 
@@ -52,10 +52,10 @@ const BoundedControlledSlider = () => {
 
   return (
     <BlockWithDescription
-      title={boundedControlledSlider.title}
-      descriptionContent={boundedControlledSlider.descriptionContent}
-      titleLinks={titleLinks.gitHub}
-      linkToCode={boundedControlledSlider.linkToCode}
+      title={boundedControlledSliderMock.title}
+      descriptionContent={boundedControlledSliderMock.descriptionContent}
+      titleLinks={titleLinksMock.gitHub}
+      linkToCode={boundedControlledSliderMock.linkToCode}
     >
       <div className='w-full max-w-3xl p-4'>
         <div className='overflow-hidden rounded-2xl bg-gray-100' ref={emblaRef}>

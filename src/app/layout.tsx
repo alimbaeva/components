@@ -24,7 +24,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       >
         <main className='flex min-h-screen w-full flex-col lg:flex-row'>
           <Navigation />
-          {children}
+          <section className='flex-1 lg:pl-72'>{children}</section>
         </main>
       </body>
     </html>

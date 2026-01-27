@@ -1,59 +1,102 @@
 'use client'
 
-import { navigationMock } from '@/shared/mocks/navigation'
-import clsx from 'clsx'
-import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import clsx from 'clsx'
+import { navigationMock } from '@/shared/mocks/navigation'
+import { LinkItem } from '@/ui/link-item/link-item'
+import type { MouseEvent } from 'react'
 
 const Navigation = () => {
   const pathname = usePathname()
+  const [activeHash, setActiveHash] = useState('')
+
+  useEffect(() => {
+    const updateHash = () => setActiveHash(window.location.hash)
+    updateHash()
+    window.addEventListener('hashchange', updateHash)
+    return () => window.removeEventListener('hashchange', updateHash)
+  }, [])
+
+  const handleScroll = (e: MouseEvent<HTMLAnchorElement>, link: string) => {
+    const [linkPathname, linkHash] = link.split('#')
+
+    const isAnchorOnCurrentPage =
+      linkHash && (linkPathname === '' || linkPathname === pathname)
+
+    if (isAnchorOnCurrentPage) {
+      e.preventDefault()
+      const targetId = `#${linkHash}`
+      const element = document.querySelector(targetId)
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+
+        window.history.pushState(null, '', targetId)
+
+        setActiveHash(targetId)
+      }
+    }
+  }
 
   return (
-    <section className='flex items-end justify-end'>
-      <nav className='w-[80%] py-6 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)] lg:h-full lg:w-75 lg:shadow-[10px_0_15px_-3px_rgba(0,0,0,0.1)]'>
-        <ul>
-          {navigationMock.map(({ label, link, items }, ind) => {
-            const isActive = pathname === link
+    <nav className='fixed top-0 left-0 h-screen w-72 border-r border-neutral-200 bg-white p-4 lg:shadow-[10px_0_15px_-3px_rgba(0,0,0,0.1)]'>
+      <ul>
+        {navigationMock.map((group, idx) => {
+          const isCurrentPage = pathname === group.link
+          const hasItems = !!group.items?.length
 
-            return (
-              <li key={ind} className='group hover:bg-warning-100'>
-                <Link
-                  href={link}
+          return (
+            <div key={idx}>
+              <LinkItem
+                link={group.link}
+                label={group.label}
+                isActive={isCurrentPage}
+                parentClassName='flex flex-col'
+                className={`px-4 py-1.5 text-sm transition-all ${
+                  isCurrentPage
+                    ? 'bg-warning-100 text-warning-700'
+                    : 'text-neutral-600 hover:bg-neutral-100'
+                }`}
+              />
+              {hasItems && (
+                <div
                   className={clsx(
-                    'flex size-full px-8 py-3 font-semibold group-hover:text-neutral-500',
-                    isActive && 'text-warning-600',
+                    'overflow-hidden pl-6 transition-all duration-500 ease-in-out',
+                    isCurrentPage
+                      ? 'mt-2 max-h-125 opacity-100'
+                      : 'max-h-0 opacity-0',
                   )}
                 >
-                  {label}
-                </Link>
-
-                {items && (
-                  <ul className='pl-4'>
-                    {items.map((item, index) => {
-                      const isSubActive = pathname === item.link
+                  <ul>
+                    {group.items?.map((item, i) => {
+                      const isActiveHash = activeHash === item.link
 
                       return (
-                        <li key={index}>
-                          <Link
-                            href={item.link}
-                            className={clsx(
-                              'flex size-full px-8 py-2 text-[14px] group-hover:text-neutral-500',
-                              isSubActive && 'text-warning-600',
-                            )}
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
+                        <LinkItem
+                          key={i}
+                          link={item.link}
+                          label={item.label}
+                          isActive={isActiveHash}
+                          isLeftElement={true}
+                          className={`px-4 py-1.5 text-sm transition-all ${
+                            isActiveHash
+                              ? 'text-warning-600 translate-x-1 font-bold'
+                              : 'text-neutral-500 hover:text-neutral-800'
+                          }`}
+                          elementStyle='bg-warning-600 absolute top-0 bottom-0 -left-0.5 w-0.5'
+                          onClick={(e) => handleScroll(e, item.link)}
+                        />
                       )
                     })}
                   </ul>
-                )}
-              </li>
-            )
-          })}
-        </ul>
-      </nav>
-    </section>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </ul>
+    </nav>
   )
 }
 

@@ -24,6 +24,7 @@ const InfiniteAutoplaySlider = () => {
 
   return (
     <BlockWithDescription
+      id='endless_smooth_slider_embla_carousel'
       titleLinks={titleLinksMock.gitHub}
       title={infiniteAutoplaySliderMock.title}
       descriptionContent={infiniteAutoplaySliderMock.descriptionContent}

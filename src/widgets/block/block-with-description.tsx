@@ -5,10 +5,11 @@ import { Description } from '@/ui/description/description'
 import { Paragraph } from '@/ui/paragraph/paragraph'
 
 const BlockWithDescription = (props: Props) => {
-  const { children, title, descriptionContent, titleLinks, linkToCode } = props
+  const { children, title, descriptionContent, titleLinks, linkToCode, id } =
+    props
 
   return (
-    <Container>
+    <Container id={id}>
       {title && <Title text={title} />}
       {children}
       {descriptionContent && <Description description={descriptionContent} />}

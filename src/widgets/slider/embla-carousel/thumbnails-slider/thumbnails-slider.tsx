@@ -53,6 +53,7 @@ const ThumbnailsSlider = () => {
 
   return (
     <BlockWithDescription
+      id='related_sliders_embla_carousel'
       titleLinks={titleLinksMock.gitHub}
       title={thumbnailsSliderMock.title}
       descriptionContent={thumbnailsSliderMock.descriptionContent}

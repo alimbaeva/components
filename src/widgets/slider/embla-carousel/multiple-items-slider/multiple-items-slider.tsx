@@ -36,6 +36,7 @@ const MultipleItemsSlider = () => {
 
   return (
     <BlockWithDescription
+      id='group_sliders_embla_carousel'
       titleLinks={titleLinksMock.gitHub}
       title={multipleItemsSliderMock.title}
       descriptionContent={multipleItemsSliderMock.descriptionContent}

@@ -28,6 +28,7 @@ const FullscreenCarousel = () => {
 
   return (
     <BlockWithDescription
+      id='single_slider_embla_carousel'
       titleLinks={titleLinksMock.gitHub}
       title={fullscreenCarouselMock.title}
       descriptionContent={fullscreenCarouselMock.descriptionContent}

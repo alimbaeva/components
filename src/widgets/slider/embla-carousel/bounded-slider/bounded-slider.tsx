@@ -17,6 +17,7 @@ const BoundedSlider = () => {
 
   return (
     <BlockWithDescription
+      id='card_feed_embla_carousel'
       title={boundedSliderMock.title}
       descriptionContent={boundedSliderMock.descriptionContent}
       titleLinks={titleLinksMock.gitHub}

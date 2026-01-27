@@ -270,7 +270,7 @@ const multipleItemsSliderMock = {
 }
 
 const infiniteAutoplaySliderMock = {
-  title: 'Бесконечного плавного слайдера (эффект Marquee)',
+  title: 'Бесконечый плавный слайдер (эффект Marquee)',
   linkToCode:
     'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/embla-carousel/infinite-autoplay-slider/infinite-autoplay-slider.tsx',
   descriptionContent: `

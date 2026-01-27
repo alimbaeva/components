@@ -7,6 +7,7 @@ type Props = ComponentProps<'section'> &
     position?: 'col' | 'row' | 'custom'
     padding?: 'normal' | 'custom'
     className?: string
+    id?: string
     variant?: 'section' | 'div'
   }
 

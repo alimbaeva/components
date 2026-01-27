@@ -5,6 +5,7 @@ type Props = PropsWithChildren & {
   descriptionContent?: string
   titleLinks?: string
   linkToCode?: string
+  id: string
 }
 
 export type { Props }

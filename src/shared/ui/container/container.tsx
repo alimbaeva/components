@@ -26,12 +26,14 @@ const Container = (props: Props) => {
     padding = 'normal',
     gap = 'md',
     className,
+    id,
   } = props
 
   const Variant = variant
 
   return (
     <Variant
+      id={id}
       className={clsx(
         'mx-auto w-full',
         PADDING_CUSTOM[padding],

@@ -12,7 +12,7 @@ const Header = () => {
   const handleClickMenu = () => setIsOpen((prevState) => !prevState)
   useLockBodyScroll(isOpen)
   return (
-    <header className='fixed top-0 left-0 z-9999 block max-h-14 w-full items-end bg-white'>
+    <header className='fixed top-0 left-0 z-10 block max-h-14 w-full items-end bg-white'>
       <Container padding='minimal'>
         <Button
           className='relative z-50 ml-auto size-10 outline-none lg:hidden'

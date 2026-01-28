@@ -40,7 +40,7 @@ const Navigation = () => {
   }
 
   return (
-    <nav className='fixed top-0 left-0 h-screen w-72 border-r border-neutral-200 bg-white p-4 lg:shadow-[10px_0_15px_-3px_rgba(0,0,0,0.1)]'>
+    <nav className='relative w-full border-b border-neutral-200 bg-white p-4 lg:fixed lg:top-0 lg:left-0 lg:h-screen lg:w-72 lg:border-r lg:border-b-0 lg:shadow-[10px_0_15px_-3px_rgba(0,0,0,0.1)]'>
       <ul>
         {navigationMock.map((group, idx) => {
           const isCurrentPage = pathname === group.link

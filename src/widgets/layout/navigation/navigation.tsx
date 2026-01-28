@@ -6,8 +6,11 @@ import clsx from 'clsx'
 import { navigationMock } from '@/shared/mocks/navigation'
 import { LinkItem } from '@/ui/link-item/link-item'
 import type { MouseEvent } from 'react'
+import type { Props } from './navigation.props'
 
-const Navigation = () => {
+const Navigation = (props: Props) => {
+  const { className } = props
+
   const pathname = usePathname()
   const [activeHash, setActiveHash] = useState('')
 
@@ -40,7 +43,12 @@ const Navigation = () => {
   }
 
   return (
-    <nav className='relative w-full border-b border-neutral-200 bg-white p-4 lg:fixed lg:top-0 lg:left-0 lg:h-screen lg:w-72 lg:border-r lg:border-b-0 lg:shadow-[10px_0_15px_-3px_rgba(0,0,0,0.1)]'>
+    <nav
+      className={clsx(
+        'w-full border-b border-neutral-200 bg-white p-4',
+        className,
+      )}
+    >
       <ul>
         {navigationMock.map((group, idx) => {
           const isCurrentPage = pathname === group.link

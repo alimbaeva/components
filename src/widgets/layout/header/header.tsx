@@ -25,7 +25,7 @@ const Header = () => {
       <Navigation isOpen={isOpen} onClick={handleClickMenu} />
       {isOpen && (
         <div
-          className='fixed inset-0 top-14 z-50 bg-black/50'
+          className='fixed inset-0 top-14 z-50 bg-black/50 lg:hidden'
           onClick={() => setIsOpen(false)}
         />
       )}

@@ -9,7 +9,7 @@ import type { MouseEvent } from 'react'
 import type { Props } from './navigation.props'
 
 const Navigation = (props: Props) => {
-  const { className } = props
+  const { isOpen, className, onClick } = props
 
   const pathname = usePathname()
   const [activeHash, setActiveHash] = useState('')
@@ -40,12 +40,19 @@ const Navigation = (props: Props) => {
         setActiveHash(targetId)
       }
     }
+    onClick()
   }
 
   return (
     <nav
       className={clsx(
-        'w-full border-b border-neutral-200 bg-white p-4',
+        'fixed top-14 right-0 z-200 h-screen w-72 border-l border-neutral-200 bg-white p-4 lg:top-0',
+        'transition-all duration-300 ease-in-out',
+        isOpen
+          ? 'visible translate-x-0 opacity-100'
+          : 'pointer-events-none translate-x-full',
+        'lg:right-auto lg:left-0 lg:translate-x-0',
+        'lg:border-r lg:border-l-0',
         className,
       )}
     >

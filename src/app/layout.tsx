@@ -24,7 +24,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       >
         <Header />
         <main className='flex min-h-screen w-full flex-col lg:flex-row'>
-          <section className='w-full min-w-0 flex-1 lg:ml-72'>
+          <section className='z-10 w-full min-w-0 flex-1 lg:ml-72'>
             {children}
           </section>
         </main>

@@ -3,6 +3,7 @@ import type { Props } from './container.props'
 
 const PADDING_CUSTOM = {
   normal: 'px-4 py-5 md:py-8 md:px-8',
+  minimal: 'px-4 py-2 md:py-3 md:px-8',
   custom: '',
 }
 

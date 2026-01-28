@@ -5,7 +5,7 @@ type Props = ComponentProps<'section'> &
   PropsWithChildren & {
     gap?: 'lg' | 'md' | 'custom'
     position?: 'col' | 'row' | 'custom'
-    padding?: 'normal' | 'custom'
+    padding?: 'normal' | 'minimal' | 'custom'
     className?: string
     id?: string
     variant?: 'section' | 'div'

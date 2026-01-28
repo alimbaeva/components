@@ -46,7 +46,7 @@ const Navigation = (props: Props) => {
   return (
     <nav
       className={clsx(
-        'fixed top-14 right-0 z-200 h-screen w-72 border-l border-neutral-200 bg-white p-4 lg:top-0',
+        'fixed top-14 right-0 z-9999 h-screen w-72 border-l border-neutral-200 bg-white p-4 lg:top-0',
         'transition-all duration-300 ease-in-out',
         isOpen
           ? 'visible translate-x-0 opacity-100'

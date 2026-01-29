@@ -6,6 +6,7 @@ import type { Props } from './service-card.props'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
 import { serviceCardMock } from '@/mocks/cards-mocks'
 import { titleLinksMock } from '@/mocks/local-text'
+import { Button } from '@/ui/button/button'
 
 const ServiceCard = (props: Props) => {
   const { image, title, description, price, companiesCount, logos } = props
@@ -63,12 +64,14 @@ const ServiceCard = (props: Props) => {
               ))}
             </div>
 
-            <button
-              type='button'
-              className='bg-positive-500 hover:bg-positive-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition-colors'
+            <Button
+              padding={4_2}
+              color='light_green'
+              rounded='xl'
+              textColor='white'
             >
               Все компании
-            </button>
+            </Button>
           </div>
         </div>
       </article>

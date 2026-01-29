@@ -50,7 +50,6 @@ const serviceCardMock = {
         <li><strong>Позиционирование:</strong> Для корректной работы <code>fill</code> у картинки родительскому блоку <strong>обязательно</strong> нужен класс <code>relative</code>.</li>
         <li><strong>Скругление углов:</strong> При использовании <code>rounded-2xl</code> на основном контейнере не забывайте про <code>overflow-hidden</code>, иначе дочерние элементы (например, картинка сверху) перекроют скругления.</li>
         <li><strong>Гибкость футера:</strong> Классы <code>flex items-center justify-between</code> — это стандарт для разделения контента по разным краям карточки.</li>
-        <li><strong>Контрастность:</strong> Будьте внимательны с <code>text-neutral-100</code> на белом фоне (<code>bg-white</code>). Для текста используйте более темные оттенки, например <code>text-neutral-900</code>.</li>
     </ul>
 
     <h3>3. Рекомендации по UX и UI</h3>

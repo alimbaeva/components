@@ -33,6 +33,16 @@ const navigationMock = [
       },
     ],
   },
+  {
+    label: 'Карточки',
+    link: '/cards',
+    items: [
+      {
+        label: 'Карточка услуг',
+        link: '#service_card',
+      },
+    ],
+  },
 ]
 
 export { navigationMock }

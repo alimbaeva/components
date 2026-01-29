@@ -1,21 +1,5 @@
-interface CompanyLogo {
-  id: string
-  src: string
-  alt: string
-}
+import type { CardType } from '@/types/props/card.props'
 
-interface Props {
-  image: {
-    src: string
-    alt: string
-  }
-  title: string
-  description: string
-  price: string
-  companiesCount: number
-  logos: CompanyLogo[]
-  buttonText: string
-  onButtonClick?: () => void
-}
+type Props = CardType
 
-export type { CompanyLogo, Props }
+export type { Props }

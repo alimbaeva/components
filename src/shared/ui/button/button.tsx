@@ -13,12 +13,12 @@ const CUSTOM_GAP = {
 
 const CUSTOM_PADDING = {
   2: 'p-2',
+  4_2: 'px-4 py-2',
   custom: '',
 }
 
 const CUSTOM_SIZE = {
   w_full: 'w-full',
-
   h_full: 'h-full',
   circle_48: 'h-8 w-8 md:h-12 md:w-12',
   custom: '',
@@ -27,6 +27,12 @@ const CUSTOM_SIZE = {
 const CUSTOM_COLOR = {
   glass: 'bg-white/20 transition-colors hover:bg-white/40 transition-all',
   green: 'bg-positive-800 hover:bg-positive-800/40 transition-all',
+  light_green: 'bg-positive-600 hover:bg-positive-600/40 transition-all',
+  custom: '',
+}
+
+const CUSTOM_TEXT_COLOR = {
+  white: 'text-white',
   custom: '',
 }
 
@@ -36,6 +42,7 @@ const CUSTOM_ROUNDED = {
   xl_r: 'rounded-r-xl',
   xl_l: 'rounded-l-xl',
   full: 'rounded-full',
+  xl: 'rounded-xl',
   custom: '',
 }
 
@@ -54,6 +61,7 @@ const Button = (props: Props) => {
     padding = 'custom',
     variant = 'button',
     type = 'button',
+    textColor = 'custom',
     disabled,
   } = props
 
@@ -69,6 +77,7 @@ const Button = (props: Props) => {
         CUSTOM_GAP[gap],
         CUSTOM_SIZE[size],
         CUSTOM_PADDING[padding],
+        CUSTOM_TEXT_COLOR[textColor],
         disabled && 'pointer-events-none cursor-not-allowed opacity-50',
         className,
       )}

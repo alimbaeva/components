@@ -6,11 +6,13 @@ import { Container } from '@/ui/container/container'
 import { useState } from 'react'
 import { Navigation } from '../navigation/navigation'
 import { useLockBodyScroll } from '@/hooks/use-lock-body-scroll'
+import { NavigationDesktop } from '../navigation/navigation-desktop'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const handleClickMenu = () => setIsOpen((prevState) => !prevState)
   useLockBodyScroll(isOpen)
+
   return (
     <header className='fixed top-0 left-0 z-10 block max-h-14 w-full items-end bg-white'>
       <Container padding='minimal'>
@@ -22,7 +24,12 @@ const Header = () => {
           <BurgerMenuBlock isOpen={isOpen} />
         </Button>
       </Container>
-      <Navigation isOpen={isOpen} onClick={handleClickMenu} />
+      <Navigation
+        isOpen={isOpen}
+        onClick={handleClickMenu}
+        className='fixed lg:hidden'
+      />
+      <NavigationDesktop className='hidden lg:fixed lg:block' />
       {isOpen && (
         <div
           className='fixed inset-0 top-14 z-50 bg-black/50 lg:hidden'

@@ -1,7 +1,7 @@
 type Props = {
   className?: string
   isOpen?: boolean
-  onClick: () => void
+  onClick?: () => void
 }
 
 export type { Props }

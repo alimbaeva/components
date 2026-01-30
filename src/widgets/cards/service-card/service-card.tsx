@@ -49,19 +49,20 @@ const ServiceCard = (props: Props) => {
 
           <div className='flex items-center justify-between'>
             <div className='flex items-center gap-2'>
-              {logos.map((logo) => (
-                <div
-                  key={logo.id}
-                  className='relative h-8 w-8 overflow-hidden rounded'
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt ?? 'image'}
-                    fill
-                    className='object-contain'
-                  />
-                </div>
-              ))}
+              {logos &&
+                logos.map((logo) => (
+                  <div
+                    key={logo.id}
+                    className='relative h-8 w-8 overflow-hidden rounded'
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt ?? 'image'}
+                      fill
+                      className='object-contain'
+                    />
+                  </div>
+                ))}
             </div>
 
             <Button

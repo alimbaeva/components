@@ -6,8 +6,9 @@ type CardType = {
   description: string
   description_long?: string
   price: string
-  companiesCount: number
-  logos: ImageType[]
+  companiesCount?: number
+  logos?: ImageType[]
+  tags?: string[]
 }
 
 export type { CardType }

@@ -25,9 +25,9 @@ const CUSTOM_SIZE = {
 }
 
 const CUSTOM_COLOR = {
-  glass: 'bg-white/20 transition-colors hover:bg-white/40 transition-all',
-  green: 'bg-positive-800 hover:bg-positive-800/40 transition-all',
-  light_green: 'bg-positive-600 hover:bg-positive-600/40 transition-all',
+  glass: 'bg-white/20',
+  green: 'bg-positive-800',
+  light_green: 'bg-positive-600',
   custom: '',
 }
 
@@ -78,6 +78,7 @@ const Button = (props: Props) => {
         CUSTOM_SIZE[size],
         CUSTOM_PADDING[padding],
         CUSTOM_TEXT_COLOR[textColor],
+        'transition-all duration-200 group-hover:brightness-125 hover:brightness-125',
         disabled && 'pointer-events-none cursor-not-allowed opacity-50',
         className,
       )}

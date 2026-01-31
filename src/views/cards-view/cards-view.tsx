@@ -2,6 +2,7 @@ import { CardMock } from '@/mocks/cards-mocks'
 import { Container } from '@/ui/container/container'
 import { ServiceCard } from '@/widgets/cards/service-card/service-card'
 import { ServiceSnippetCard } from '@/widgets/cards/service-snippet/service-snippet'
+import { VendorCard } from '@/widgets/cards/vendor-card/vendor-card'
 
 const CardsView = () => {
   return (
@@ -21,6 +22,7 @@ const CardsView = () => {
         price={CardMock.price}
         tags={CardMock.tags}
       />
+      <VendorCard />
     </Container>
   )
 }

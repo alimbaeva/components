@@ -7,6 +7,7 @@ const STANDARD_TYPE = {
     'text-[24px] md:text-[36px] font-bold leading-[115%] tracking-tight',
   normal: 'text-[20px] md:text-[28px] font-bold leading-[120%]',
   minimal: 'text-[18px] md:text-[22px] font-semibold leading-[120%]',
+  s: 'text-[16px] md:text-[20px] font-semibold leading-[120%]',
   custom: '',
 }
 

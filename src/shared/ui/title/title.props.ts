@@ -6,7 +6,7 @@ type Props = ComponentProps<'h1'> &
     text: string
     className?: string
     color?: 'dark' | 'light' | 'custom'
-    type?: 'medium' | 'semibold' | 'normal' | 'minimal' | 'custom'
+    type?: 'medium' | 'semibold' | 'normal' | 'minimal' | 's' | 'custom'
     variant?: 'h1' | 'h2' | 'h3' | 'a'
   }
 

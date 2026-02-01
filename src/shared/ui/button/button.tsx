@@ -28,6 +28,7 @@ const CUSTOM_COLOR = {
   glass: 'bg-white/20',
   green: 'bg-positive-800',
   light_green: 'bg-positive-600',
+  light_900: 'bg-positive-650/70',
   custom: '',
 }
 

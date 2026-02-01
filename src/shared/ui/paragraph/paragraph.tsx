@@ -5,6 +5,7 @@ const STANDARD_TYPE = {
   medium: 'text-[16px] md:text-[20px] font-bold leading-[120%]',
   semibold: 'text-[16px] md:text-[18px] font-semibold leading-[120%]',
   normal: 'text-[14px] md:text-[18px] font-normal leading-[120%]',
+  normal_16: 'text-[14px] md:text-[16px] leading-[150%]',
   minimal: 'text-[11px] md:text-[12px] leading-[100%]',
   custom: '',
 }

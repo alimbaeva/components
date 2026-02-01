@@ -5,7 +5,7 @@ type Props = ComponentProps<'p'> &
   ComponentProps<'span'> & {
     text: string
     color?: 'dark' | 'light' | 'link' | 'light_6' | 'custom'
-    type?: 'medium' | 'semibold' | 'normal' | 'minimal' | 'custom'
+    type?: 'medium' | 'semibold' | 'normal' | 'minimal' | 'normal_16' | 'custom'
     className?: string
     variant?: 'p' | 'a' | 'span'
   }

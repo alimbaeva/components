@@ -22,7 +22,13 @@ const CardsView = () => {
         price={CardMock.price}
         tags={CardMock.tags}
       />
-      <VendorCard />
+      <VendorCard
+        image={CardMock.image}
+        title={CardMock.title}
+        description={CardMock.description_long}
+        price={CardMock.price}
+        tags={CardMock.tags}
+      />
     </Container>
   )
 }

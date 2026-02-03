@@ -6,7 +6,7 @@ import { VendorCard } from '@/widgets/cards/vendor-card/vendor-card'
 
 const CardsView = () => {
   return (
-    <Container variant='div'>
+    <Container padding='custom' variant='div'>
       <ServiceCard
         image={CardMock.image}
         title={CardMock.title}

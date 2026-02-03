@@ -21,7 +21,7 @@ const ServiceSnippetCard = (props: Props) => {
       titleLinks={titleLinksMock.gitHub}
       linkToCode={serviceSnippetCardMock.linkToCode}
     >
-      <article className='group relative flex w-88 flex-col items-start gap-6.25 rounded-2xl border-[0.5px] border-[#D1D5DB] bg-white p-4 shadow-sm'>
+      <article className='group relative flex w-full flex-col items-start gap-6.25 rounded-2xl border-[0.5px] border-[#D1D5DB] bg-white p-4 shadow-sm sm:w-88'>
         <div className='flex gap-4'>
           <div className='relative h-24 w-24 shrink-0 overflow-hidden rounded-lg'>
             <Image

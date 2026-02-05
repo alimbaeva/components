@@ -41,6 +41,14 @@ const navigationMock = [
         label: 'Карточка услуг',
         link: '#service_card',
       },
+      {
+        label: 'Карточка услуг - snippet',
+        link: '#service_snippet_card',
+      },
+      {
+        label: 'Vendor Card',
+        link: '#vendor_card',
+      },
     ],
   },
 ]

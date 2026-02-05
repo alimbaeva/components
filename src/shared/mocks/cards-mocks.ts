@@ -75,7 +75,7 @@ const serviceCardMock = {
 }
 
 const serviceSnippetCardMock = {
-  title: 'Карточка услуг (Service Card)',
+  title: 'Карточка услуг (snippet Card)',
   linkToCode:
     'https://github.com/alimbaeva/components/tree/main/src/widgets/cards/service-snippet/service-snippet.tsx',
   descriptionContent: `

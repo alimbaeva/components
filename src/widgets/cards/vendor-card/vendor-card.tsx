@@ -16,7 +16,7 @@ const VendorCard = (props: Props) => {
 
   return (
     <BlockWithDescription
-      id='service_snippet_card'
+      id='vendor_card'
       title={vendorCardMock.title}
       descriptionContent={vendorCardMock.descriptionContent}
       titleLinks={titleLinksMock.gitHub}

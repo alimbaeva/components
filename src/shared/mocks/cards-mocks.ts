@@ -34,6 +34,22 @@ const CardMock = {
   ],
 }
 
+const ProjectCardMock = {
+  labels: ['озеленение', 'Гидропонные', 'Вертикальное', 'Живые'],
+  image: {
+    src: '/images/moun-1.avif',
+    alt: 'Озеленение офиса',
+  },
+  logo: {
+    id: '1',
+    src: '/images/cards/hors_192.png',
+    alt: 'AG',
+  },
+  price: '40000',
+  title: 'Озеленение офиса',
+  devTitle: 'Озеленение офиса',
+}
+
 const serviceCardMock = {
   title: 'Карточка услуг',
   linkToCode:
@@ -172,4 +188,10 @@ const vendorCardMock = {
 `,
 }
 
-export { CardMock, serviceCardMock, serviceSnippetCardMock, vendorCardMock }
+export {
+  CardMock,
+  ProjectCardMock,
+  serviceCardMock,
+  serviceSnippetCardMock,
+  vendorCardMock,
+}

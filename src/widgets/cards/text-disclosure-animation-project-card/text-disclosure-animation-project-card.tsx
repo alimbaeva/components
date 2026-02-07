@@ -4,23 +4,35 @@ import { MapPinIcon } from '@/icons/map-pin-icon'
 import { RefreshCwIcon } from '@/icons/refresh-cw-icon'
 import { DownIcon } from '@/icons/down-icon'
 import { HeartIcon } from '@/icons/heart-icon'
+import type { Props } from './props'
 
-const TextDisclosureAnimationProjectCard = () => {
+const TextDisclosureAnimationProjectCard = (props: Props) => {
+  const {
+    labels,
+    image,
+    logo,
+    price,
+    title,
+    devTitle,
+    description,
+    description_long,
+  } = props
+
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <div className='flex w-full max-w-95 min-w-60 flex-col items-start overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm transition-all duration-300'>
       <div className='relative flex aspect-129/101 h-[225.48px] items-center justify-center self-stretch overflow-hidden'>
         <Image
-          src='/images/moun-1.avif'
-          alt='Riverbend Apartments'
+          src={image.src}
+          alt={image.alt ?? ''}
           fill
           className='object-cover'
         />
         <div className='absolute inset-0 bg-linear-to-t from-black/30 to-transparent' />
 
         <div className='absolute top-3 left-3 flex flex-wrap gap-1.5'>
-          {['Квартира', 'Недвижимость', 'Батуми'].map((tag) => (
+          {labels.map((tag) => (
             <span
               key={tag}
               className='rounded-full bg-black/40 px-3 py-1 text-[12px] text-white backdrop-blur-md'
@@ -35,17 +47,15 @@ const TextDisclosureAnimationProjectCard = () => {
             AG
           </div>
           <span className='text-[13px] font-semibold text-slate-800'>
-            Alliance Group
+            {devTitle}
           </span>
         </div>
       </div>
 
       <div className='flex w-full flex-col gap-3 p-5'>
         <div>
-          <h3 className='text-[22px] font-bold text-slate-900'>
-            Riverbend Apartments
-          </h3>
-          <p className='text-sm text-slate-400'>сдача 2022 - 2024г.</p>
+          <h3 className='text-[22px] font-bold text-slate-900'>{title}</h3>
+          <p className='text-sm text-slate-400'>срок 2022 - 2024г.</p>
         </div>
 
         <div className='flex items-center gap-1 text-sm text-slate-500'>
@@ -55,7 +65,7 @@ const TextDisclosureAnimationProjectCard = () => {
 
         <div className='flex items-center justify-between py-1'>
           <span className='text-[20px] font-bold text-slate-900'>
-            от $ 9,999,999
+            от $ {price}
           </span>
           <div className='flex items-center gap-1 text-xs text-slate-400'>
             <RefreshCwIcon />
@@ -88,10 +98,7 @@ const TextDisclosureAnimationProjectCard = () => {
           >
             <div className='overflow-hidden'>
               <p className='pb-4 text-sm leading-relaxed text-slate-500'>
-                Квартиры в новых домах Батуми открывают уникальные возможности
-                для инвестиций, позволяя вам не только наслаждаться жизнью в
-                прекрасном месте, но и разумно вложить свои средства. Это
-                отличная возможность для расширения вашего портфеля.
+                {description_long}
               </p>
             </div>
           </div>
@@ -108,7 +115,7 @@ const TextDisclosureAnimationProjectCard = () => {
 
           {!isExpanded && (
             <p className='truncate pr-8 text-sm text-slate-500'>
-              Квартиры в новых домах Батуми открывают...
+              {description}
             </p>
           )}
         </div>

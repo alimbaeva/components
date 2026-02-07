@@ -4,6 +4,8 @@ type Card = {
   image: ImageType
   title: string
   price: string
+  description?: string
+  description_long?: string
 }
 
 type CardProjectType = Card & {
@@ -13,8 +15,6 @@ type CardProjectType = Card & {
 }
 
 type CardType = Card & {
-  description: string
-  description_long?: string
   companiesCount?: number
   logos?: ImageType[]
   tags?: string[]

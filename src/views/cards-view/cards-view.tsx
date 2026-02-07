@@ -41,7 +41,16 @@ const CardsView = () => {
         labels={ProjectCardMock.labels}
         devTitle={ProjectCardMock.devTitle}
       />
-      <TextDisclosureAnimationProjectCard />
+      <TextDisclosureAnimationProjectCard
+        image={ProjectCardMock.image}
+        title={ProjectCardMock.title}
+        price={ProjectCardMock.price}
+        logo={ProjectCardMock.logo}
+        labels={ProjectCardMock.labels}
+        devTitle={ProjectCardMock.devTitle}
+        description_long={ProjectCardMock.description_long}
+        description={ProjectCardMock.description}
+      />
     </Container>
   )
 }

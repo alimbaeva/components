@@ -1,8 +1,11 @@
+'use client'
+
 import { CardMock, ProjectCardMock } from '@/mocks/cards-mocks'
 import { Container } from '@/ui/container/container'
 import { ProjectCard } from '@/widgets/cards/project-card/project-card'
 import { ServiceCard } from '@/widgets/cards/service-card/service-card'
 import { ServiceSnippetCard } from '@/widgets/cards/service-snippet/service-snippet'
+import { TextDisclosureAnimationProjectCard } from '@/widgets/cards/text-disclosure-animation-project-card/text-disclosure-animation-project-card'
 import { VendorCard } from '@/widgets/cards/vendor-card/vendor-card'
 
 const CardsView = () => {
@@ -38,6 +41,7 @@ const CardsView = () => {
         labels={ProjectCardMock.labels}
         devTitle={ProjectCardMock.devTitle}
       />
+      <TextDisclosureAnimationProjectCard />
     </Container>
   )
 }

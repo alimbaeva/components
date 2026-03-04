@@ -49,6 +49,10 @@ const navigationMock = [
         label: 'Vendor Card',
         link: '#vendor_card',
       },
+      {
+        label: 'Раскрывающейся Карточки',
+        link: '#text_disclosure_animation_project_card',
+      },
     ],
   },
 ]

@@ -249,6 +249,64 @@ const projectCardTextsMock = {
 `,
 }
 
+const textDisclosureAnimationProjectCardTextsMock = {
+  title: 'Раскрывающейся Карточки',
+  linkToCode:
+    'https://github.com/alimbaeva/components/tree/main/src/widgets/cards/text-disclosure-animation-project-card/text-disclosure-animation-project-card.tsx',
+  descriptionContent: `
+    <h3>Анализ компонента Раскрывающейся Карточки</h3>
+      <p>
+      Компонент реализует сложную анимацию раскрытия текстового контента без использования JavaScript-расчетов высоты, опираясь на современные возможности CSS Grid и JIT-двигателя Tailwind.
+      </p>
+      <h3>1. Магия анимации: grid-rows-[0fr] → [1fr]</h3>
+      <ul>
+          <li><strong>Механика:</strong> Это единственный стандартный способ плавно анимировать высоту от <code>0</code> до <code>auto</code>. Использование <code>grid-template-rows</code> позволяет браузеру вычислить конечную высоту дочернего элемента до начала анимации.</li>
+          <li><strong>Критическое условие:</strong> Анимация сработает только при наличии <code>overflow: hidden</code> у внутреннего контейнера. Без него контент будет виден сразу, нарушая логику раскрытия.</li>
+          <li><strong>Технический нюанс:</strong> Убедитесь, что ваш компилятор поддерживает произвольные значения (JIT). В Tailwind v3+ и v4 это работает из коробки, генерируя специфический CSS для этого перехода.</li>
+      </ul>
+
+      <h3>2. Синхронизация контента (UX/UI)</h3>
+      <p>Использование двух разных полей (<code>description</code> и <code>description_long</code>) требует особого внимания к деталям:</p>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+          <thead>
+              <tr style="border-bottom: 2px solid #eee;">
+                  <th style="text-align: left; padding: 8px;">Проблема</th>
+                  <th style="text-align: left; padding: 8px;">Решение / Последствие</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 8px;"><strong>Мерцание при переключении</strong></td>
+                  <td style="padding: 8px;">Мгновенное исчезновение короткого текста при начале анимации создает визуальный "скачок". Рекомендуется использовать плавный <code>opacity</code>.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 8px;"><strong>Логика чтения</strong></td>
+                  <td style="padding: 8px;">Важно, чтобы <code>description_long</code> начинался идентично короткой версии, иначе пользователь теряет фокус при раскрытии.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 8px;"><strong>Пустые данные</strong></td>
+                  <td style="padding: 8px;">Если <code>description_long</code> отсутствует, кнопка развертывания должна быть скрыта (условие в коде).</td>
+              </tr>
+          </tbody>
+      </table>
+
+      <h3>3. Позиционирование и Производительность</h3>
+      <ul>
+          <li><strong>Риск Absolute-кнопки:</strong> Использование <code>absolute right-0 -bottom-6</code> опасно тем, что при малом объеме текста кнопка может перекрыть основные элементы управления (кнопку "Подробнее").</li>
+          <li><strong>Оптимизация рендеринга:</strong> Избегайте <code>transition-all</code> на всей карточке. Замена на <code>transition-[transform,grid-template-rows]</code> существенно снижает нагрузку на графический процессор (GPU) мобильных устройств.</li>
+          <li><strong>Геометрия:</strong> Фиксированная высота <code>h-[225.48px]</code> для изображения хороша для макета, но требует проверки на узких экранах (<code>min-w-60</code>), чтобы избежать искажения <code>aspect-ratio</code>.</li>
+      </ul>
+
+      <h3>📋 Финальный Чек-лист</h3>
+      <p>
+      ✅ <strong>Доступность:</strong> Обязательно добавьте <code>aria-expanded={isExpanded}</code> на кнопку переключения для корректной работы скринридеров.<br/>
+      ✅ <strong>Конфигурация:</strong> Проверьте наличие переменных <code>bg-(--color-secondary)</code> в вашем CSS/Theme файле. Без них фон может не отобразиться.<br/>
+      ✅ <strong>Анимация иконок:</strong> Сочетание инлайнового стиля <code>transform: rotate</code> и класса <code>transition-transform</code> обеспечит идеальное вращение стрелки <code>DownIcon</code> на 180°.<br/>
+      ✅ <strong>Интерфейс:</strong> Ховер-эффекты на кнопках (<code>hover:brightness-110</code>) и тенях карточки создают завершенный вид премиального продукта.
+      </p>
+      `,
+}
+
 export {
   CardMock,
   ProjectCardMock,
@@ -256,4 +314,5 @@ export {
   serviceSnippetCardMock,
   vendorCardMock,
   projectCardTextsMock,
+  textDisclosureAnimationProjectCardTextsMock,
 }

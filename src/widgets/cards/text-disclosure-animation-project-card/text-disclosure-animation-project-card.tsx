@@ -25,7 +25,7 @@ const TextDisclosureAnimationProjectCard = (props: Props) => {
 
   return (
     <BlockWithDescription
-      id='service_card'
+      id='text_disclosure_animation_project_card'
       title={textDisclosureAnimationProjectCardTextsMock.title}
       descriptionContent={
         textDisclosureAnimationProjectCardTextsMock.descriptionContent
@@ -92,7 +92,7 @@ const TextDisclosureAnimationProjectCard = (props: Props) => {
                 className='flex items-center justify-between rounded-xl bg-slate-50 p-3'
               >
                 <span className='font-medium text-slate-600'>
-                  {room}-комн.{' '}
+                  {room}-стена.{' '}
                   <span className='ml-2 font-normal text-slate-400'>9999</span>
                 </span>
                 <span className='font-bold text-slate-800'>от $ 9,999,999</span>
@@ -121,7 +121,7 @@ const TextDisclosureAnimationProjectCard = (props: Props) => {
 
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className='absolute right-0 -bottom-6 z-10 p-1 text-slate-400 transition-transform duration-500 hover:text-slate-600'
+              className='absolute right-0 -bottom-6 z-10 cursor-pointer p-1 text-slate-400 transition-transform duration-500 hover:text-slate-600'
               style={{
                 transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
               }}
@@ -131,10 +131,10 @@ const TextDisclosureAnimationProjectCard = (props: Props) => {
           </div>
 
           <div className='mt-4 flex gap-2'>
-            <button className='flex-1 rounded-xl bg-[#333] py-4 text-sm font-bold text-white transition-colors hover:bg-black'>
+            <button className='flex-1 cursor-pointer rounded-xl bg-[#333] py-4 text-sm font-bold text-white transition-colors hover:bg-black'>
               Подробнее
             </button>
-            <button className='flex w-13.5 items-center justify-center rounded-xl bg-slate-100 text-slate-600 transition-colors hover:bg-slate-200'>
+            <button className='flex w-13.5 cursor-pointer items-center justify-center rounded-xl bg-slate-100 text-slate-600 transition-colors hover:bg-slate-200'>
               <HeartIcon className='size-6' />
             </button>
           </div>

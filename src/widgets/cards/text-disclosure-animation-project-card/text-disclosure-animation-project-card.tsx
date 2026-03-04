@@ -90,10 +90,8 @@ const TextDisclosureAnimationProjectCard = (props: Props) => {
 
         <div className='relative mt-2'>
           <div
-            className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${
-              isExpanded
-                ? 'grid-template-rows-[1fr]'
-                : 'grid-template-rows-[0fr]'
+            className={`grid transition-[grid-template-rows] duration-900 ease-in-out ${
+              isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
             }`}
           >
             <div className='overflow-hidden'>
@@ -103,21 +101,21 @@ const TextDisclosureAnimationProjectCard = (props: Props) => {
             </div>
           </div>
 
+          {!isExpanded && (
+            <p className='absolute top-0 left-0 w-full truncate pr-8 text-sm text-slate-500'>
+              {description}
+            </p>
+          )}
+
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className='absolute right-0 -bottom-1 p-1 text-slate-400 transition-transform hover:text-slate-600'
+            className='absolute right-0 -bottom-6 z-10 p-1 text-slate-400 transition-transform duration-500 hover:text-slate-600'
             style={{
               transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
             }}
           >
             <DownIcon className='size-4' />
           </button>
-
-          {!isExpanded && (
-            <p className='truncate pr-8 text-sm text-slate-500'>
-              {description}
-            </p>
-          )}
         </div>
 
         <div className='mt-4 flex gap-2'>

@@ -1,5 +1,5 @@
 const fullscreenCarouselMock = {
-  title: 'Одиночный слайдер с внутренней навигацией',
+  title: 'Одиночный слайдер с внутренней навигацией  (embla-carousel)',
   linkToCode:
     'https://github.com/alimbaeva/components/blob/main/src/widgets/slider/embla-carousel/fullscreen-carousel/fullscreen-carousel.tsx',
   descriptionContent: `
@@ -28,7 +28,7 @@ const fullscreenCarouselMock = {
 }
 
 const boundedSliderMock = {
-  title: 'Ограниченный слайдер - Лента карточек',
+  title: 'Ограниченный слайдер - Лента карточек (embla-carousel)',
   linkToCode:
     'https://github.com/alimbaeva/components/blob/main/src/widgets/slider/embla-carousel/bounded-slider/bounded-slider.tsx',
   descriptionContent: `
@@ -270,7 +270,7 @@ const multipleItemsSliderMock = {
 }
 
 const infiniteAutoplaySliderMock = {
-  title: 'Бесконечый плавный слайдер (эффект Marquee)',
+  title: 'Бесконечый плавный слайдер (эффект Marquee)  (embla-carousel)',
   linkToCode:
     'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/embla-carousel/infinite-autoplay-slider/infinite-autoplay-slider.tsx',
   descriptionContent: `
@@ -314,6 +314,52 @@ const infiniteAutoplaySliderMock = {
 `,
 }
 
+const hoverGalleryMock = {
+  title: 'Hover-to-Switch Gallery',
+  linkToCode:
+    'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/react-gallery/hover-gallery/hover-gallery.tsx',
+  descriptionContent: `
+        <h3>Галерея с переключением по наведению (Hover Switcher)</h3>
+        <p>
+        Этот паттерн обеспечивает быстрый просмотр нескольких изображений без кликов. Основная механика базируется на разделении области карточки на невидимые интерактивные зоны.
+        </p>
+
+        <h3>1. Ключевая логика (Core Logic)</h3>
+        <ul>
+            <li><strong>Невидимое сегментирование:</strong> Поверх изображений создается прозрачный Flex-контейнер. Свойство <code>flex-1</code> на дочерних элементах автоматически делит ширину карточки на равные «чувствительные зоны».</li>
+            <li><strong>Триггеры событий:</strong> Каждая зона слушает событие <code>onMouseEnter</code>, которое мгновенно обновляет состояние <code>activeIndex</code>, подменяя видимое изображение.</li>
+            <li><strong>Аппаратное ускорение:</strong> Использование <code>opacity</code> вместо <code>display: none</code> позволяет браузеру плавно переключать кадры без пересчета геометрии страницы (Layout Shift).</li>
+        </ul>
+
+        
+
+        <h3>2. Технические нюансы и Z-Index</h3>
+        <p>Для корректной работы важно соблюдать строгую иерархию слоев:</p>
+        <ul>
+            <li><strong>Нижний слой:</strong> Изображения (<code>Image</code>) с абсолютным позиционированием.</li>
+            <li><strong>Средний слой (z-10):</strong> Сетка невидимых детекторов наведения.</li>
+            <li><strong>Верхний слой (z-20):</strong> Индикаторы-полоски. <em>Важно:</em> если индикаторы перекрывают детекторы, добавьте им <code>pointer-events-none</code>.</li>
+            <li><strong>Сброс состояния:</strong> Чтобы при уходе мыши возвращалась обложка, добавьте <code>onMouseLeave={() => setActiveIndex(0)}</code> на внешний контейнер.</li>
+        </ul>
+
+        <h3>3. Что может "сломаться" и ограничения</h3>
+        <ul>
+            <li><strong>Мобильные устройства:</strong> События <code>hover</code> на тачскринах работают некорректно. Индикаторы внизу (полоски) полезны для визуализации, но для полноценной мобильной версии рекомендуется внедрять свайп-механику (например, через Embla).</li>
+            <li><strong>Мертвые зоны:</strong> Избегайте использования <code>gap</code> между детекторами наведения. Любой зазор создаст область, где мышь находится над карточкой, но переключение не срабатывает.</li>
+            <li><strong>Количество фото:</strong> Оптимальное количество — от 3 до 6. При 10+ фото зоны становятся слишком узкими, вызывая "дребезжание" и слишком быструю смену картинок.</li>
+        </ul>
+
+        <h3>📋 Чек-лист для отладки (Troubleshooting)</h3>
+        <p>
+        1. <strong>Прозрачность:</strong> Если картинки мигают, проверьте наличие <code>object-cover</code> и <code>fill</code>.<br/>
+        2. <strong>Кликабельность:</strong> Если карточка является ссылкой, убедитесь, что детекторы не блокируют переход (события должны всплывать).<br/>
+        3. <strong>LCP (Скорость):</strong> Всегда устанавливайте <code>priority={ind === 0}</code> для первого изображения, чтобы карточка не выглядела пустой при загрузке.
+        </p>
+
+        
+    `,
+}
+
 const titleLinksMock = {
   gitHub: 'Смотреть код на GitHub',
 }
@@ -326,4 +372,5 @@ export {
   titleLinksMock,
   multipleItemsSliderMock,
   infiniteAutoplaySliderMock,
+  hoverGalleryMock,
 }

@@ -5,6 +5,7 @@ import { FullscreenCarousel } from '@/widgets/slider/embla-carousel/fullscreen-c
 import { InfiniteAutoplaySlider } from '@/widgets/slider/embla-carousel/infinite-autoplay-slider/infinite-autoplay-slider'
 import { MultipleItemsSlider } from '@/widgets/slider/embla-carousel/multiple-items-slider/multiple-items-slider'
 import { ThumbnailsSlider } from '@/widgets/slider/embla-carousel/thumbnails-slider/thumbnails-slider'
+import { HoverGallery } from '@/widgets/slider/react-gallery/hover-gallery/hover-gallery'
 
 const SliderView = () => {
   return (
@@ -15,6 +16,7 @@ const SliderView = () => {
       <ThumbnailsSlider />
       <MultipleItemsSlider />
       <InfiniteAutoplaySlider />
+      <HoverGallery />
     </Container>
   )
 }

@@ -31,6 +31,10 @@ const navigationMock = [
         label: 'Бесконечый плавный слайдер',
         link: '#endless_smooth_slider_embla_carousel',
       },
+      {
+        label: 'Hover to Switch Gallery',
+        link: '#hover-gallery',
+      },
     ],
   },
   {

@@ -315,7 +315,7 @@ const infiniteAutoplaySliderMock = {
 }
 
 const hoverGalleryMock = {
-  title: 'Hover-to-Switch Gallery',
+  title: 'Hover to Switch Gallery',
   linkToCode:
     'https://github.com/alimbaeva/components/tree/main/src/widgets/slider/react-gallery/hover-gallery/hover-gallery.tsx',
   descriptionContent: `

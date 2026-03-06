@@ -11,7 +11,7 @@ const HoverGallery = () => {
 
   return (
     <BlockWithDescription
-      id='group_sliders_embla_carousel'
+      id='hover-gallery'
       titleLinks={titleLinksMock.gitHub}
       title={hoverGalleryMock.title}
       descriptionContent={hoverGalleryMock.descriptionContent}

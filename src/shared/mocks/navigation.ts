@@ -59,6 +59,11 @@ const navigationMock = [
       },
     ],
   },
+  {
+    label: 'Градиенты',
+    link: '/gradients',
+    items: [],
+  },
 ]
 
 export { navigationMock }

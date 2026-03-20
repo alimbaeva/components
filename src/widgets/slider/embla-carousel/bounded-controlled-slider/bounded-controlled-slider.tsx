@@ -1,7 +1,9 @@
 'use client'
 
 import { slidesMock } from '@/mocks/slides'
-import useEmblaCarousel from 'embla-carousel-react'
+import useEmblaCarousel, {
+  type UseEmblaCarouselType,
+} from 'embla-carousel-react'
 import { useCallback, useEffect, useState } from 'react'
 import Image from 'next/image'
 import { LeftIcon } from '@/icons/left-icon'
@@ -10,6 +12,8 @@ import { BlockWithDescription } from '@/widgets/block/block-with-description'
 import { boundedControlledSliderMock, titleLinksMock } from '@/mocks/local-text'
 import { Button } from '@/ui/button/button'
 import clsx from 'clsx'
+
+type EmblaApi = UseEmblaCarouselType[1]
 
 const BoundedControlledSlider = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -36,10 +40,12 @@ const BoundedControlledSlider = () => {
     [emblaApi],
   )
 
-  const onSelect = useCallback((api: any) => {
-    setSelectedIndex(api.selectedScrollSnap())
-    setCanScrollPrev(api.canScrollPrev())
-    setCanScrollNext(api.canScrollNext())
+  const onSelect = useCallback((api: EmblaApi) => {
+    if (!api) return
+
+    setSelectedIndex(api?.selectedScrollSnap())
+    setCanScrollPrev(api?.canScrollPrev())
+    setCanScrollNext(api?.canScrollNext())
   }, [])
 
   useEffect(() => {
@@ -48,6 +54,11 @@ const BoundedControlledSlider = () => {
     onSelect(emblaApi)
     emblaApi.on('reInit', onSelect)
     emblaApi.on('select', onSelect)
+
+    return () => {
+      emblaApi.off('reInit', onSelect)
+      emblaApi.off('select', onSelect)
+    }
   }, [emblaApi, onSelect])
 
   return (

@@ -49,6 +49,11 @@ const ThumbnailsSlider = () => {
     onSelect()
     mainApi.on('select', onSelect)
     mainApi.on('reInit', onSelect)
+
+    return () => {
+      mainApi.off('reInit', onSelect)
+      mainApi.off('select', onSelect)
+    }
   }, [mainApi, onSelect])
 
   return (

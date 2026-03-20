@@ -1,13 +1,17 @@
 'use client'
 
 import { useState, useCallback, useEffect } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
+import useEmblaCarousel, {
+  type UseEmblaCarouselType,
+} from 'embla-carousel-react'
 import Image from 'next/image'
 import { slidesMock } from '@/mocks/slides'
 import { Button } from '@/ui/button/button'
 import { UpIcon } from '@/icons/up-icon'
 import { BlockWithDescription } from '@/widgets/block/block-with-description'
 import { multipleItemsSliderMock, titleLinksMock } from '@/mocks/local-text'
+
+type EmblaApi = UseEmblaCarouselType[1]
 
 const MultipleItemsSlider = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -22,16 +26,24 @@ const MultipleItemsSlider = () => {
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
 
-  const onSelect = useCallback((api: any) => {
+  const onSelect = useCallback((api: EmblaApi) => {
+    if (!api) return
+
     setCanScrollPrev(api.canScrollPrev())
     setCanScrollNext(api.canScrollNext())
   }, [])
 
   useEffect(() => {
     if (!emblaApi) return
+
     onSelect(emblaApi)
     emblaApi.on('select', onSelect)
     emblaApi.on('reInit', onSelect)
+
+    return () => {
+      emblaApi.off('reInit', onSelect)
+      emblaApi.off('select', onSelect)
+    }
   }, [emblaApi, onSelect])
 
   return (

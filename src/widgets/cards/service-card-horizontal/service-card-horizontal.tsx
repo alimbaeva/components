@@ -11,7 +11,7 @@ import { titleLinksMock } from '@/mocks/local-text'
 const ServiceCardHorizontal = () => {
   return (
     <BlockWithDescription
-      id='service_card'
+      id='service_long_card'
       title={ServiceCardHorizontalMock.title}
       descriptionContent={ServiceCardHorizontalMock.descriptionContent}
       titleLinks={titleLinksMock.gitHub}

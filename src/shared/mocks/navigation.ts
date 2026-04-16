@@ -57,6 +57,10 @@ const navigationMock = [
         label: 'Раскрывающейся Карточки',
         link: '#text_disclosure_animation_project_card',
       },
+      {
+        label: 'Горизонтальная карточка',
+        link: '#service_long_card',
+      },
     ],
   },
   {

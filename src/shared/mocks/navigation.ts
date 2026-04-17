@@ -61,6 +61,10 @@ const navigationMock = [
         label: 'Горизонтальная карточка',
         link: '#service_long_card',
       },
+      {
+        label: 'Карточка шага',
+        link: '#step-info-card',
+      },
     ],
   },
   {

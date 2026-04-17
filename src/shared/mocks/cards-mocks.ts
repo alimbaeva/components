@@ -368,6 +368,64 @@ const ServiceCardHorizontalMock = {
       </p>
   `,
 }
+
+const StepInfoCardMock = {
+  title: 'Карточка шага',
+  linkToCode:
+    'https://github.com/alimbaeva/components/tree/main/src/widgets/cards/step-info-card/step-info-card.tsx',
+  descriptionContent: `
+    <h3>Анализ архитектуры и логики</h3>
+    <p>
+    Карточка использует <strong>Stack-дизайн</strong> (элементы друг над другом), идеально подходящий для отображения этапов, рейтингов или списков особенностей объекта.
+    </p>
+
+    <h3>1. Геометрия и Визуальные акценты</h3>
+    <ul>
+        <li><strong>Контейнер номера (size-12 absolute):</strong> Создает сильную визуальную "точку входа". Позиционирование <code>top-1.5 left-1.5</code> с адаптивным увеличением шрифта на десктопе (<code>md:text-[20px]</code>) подчеркивает порядковый номер или рейтинг, не перекрывая основной контент изображения.</li>
+        <li><strong>Пропорции (aspect-[4/3]):</strong> Использование фиксированного соотношения сторон гарантирует, что в сетке из нескольких карточек все изображения будут иметь одинаковую высоту, предотвращая визуальный хаос ("лесенку").</li>
+        <li><strong>Ограничение ширины (md:w-124):</strong> На мобильных устройствах карточка занимает 100% ширины, а на десктопе ограничивается <code>31rem</code> (496px), что сохраняет читабельность текста в списке.</li>
+    </ul>
+
+    <h3>2. Работа со списками и текстом</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+        <thead>
+            <tr style="border-bottom: 2px solid #eee;">
+                <th style="text-align: left; padding: 8px;">Стиль / Класс</th>
+                <th style="text-align: left; padding: 8px;">Функция и Значение</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px;"><code>flex flex-col gap-1.5</code></td>
+                <td style="padding: 8px;">Вертикальный ритм списка. Плотный интервал (6px) группирует теги в единый смысловой блок.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px;"><code>line-clamp-2 / 5</code></td>
+                <td style="padding: 8px;">Защита макета: на мобилках допустимо больше текста, на десктопе — жесткая обрезка для сохранения компактности.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 8px;"><code>size-5.5</code> у иконки</td>
+                <td style="padding: 8px;">Фиксированный квадратный контейнер для иконки-буллита. Центрирует иконку относительно первой строки текста.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>3. Особенности стилизации 2026</h3>
+    <ul>
+        <li><strong>Цветовая схема Teal-900:</strong> Глубокий темно-бирюзовый цвет в сочетании с <code>neutral-700/30</code> (фон с прозрачностью) создает современный, "экологичный" и премиальный вид.</li>
+        <li><strong>Интерактивность (group):</strong> Родительский класс <code>group</code> позволяет легко добавить эффекты: например, <code>group-hover:scale-105</code> для картинки, что мгновенно оживляет интерфейс.</li>
+        <li><strong>Композиция иконок:</strong> Использование <code>text-teal-900/60</code> (прозрачность 60%) для иконок <code>RightIcon</code> — важный нюанс. Это снижает визуальный шум, делая акцент на самом тексте, а не на буллитах.</li>
+    </ul>
+
+    <h3>📋 Рекомендации для разработчика</h3>
+    <p>
+    ✅ <strong>Стабильность:</strong> Всегда проверяйте <code>aspect-ratio</code>. Если изображение будет слишком узким, <code>object-cover</code> обрежет важные детали по бокам.<br/>
+    ✅ <strong>UX:</strong> Если список <code>tags</code> может быть очень длинным, добавьте <code>max-h</code> или логику <code>.slice(0, 4)</code>, чтобы одна карточка не стала в три раза длиннее соседней.<br/>
+    ✅ <strong>Доступность:</strong> Номер "1" в кружочке часто является декоративным. Если он несет важный смысл (например, "Топ-1"), убедитесь, что он доступен для скринридеров.
+    </p>
+`,
+}
+
 export {
   ServiceCardHorizontalMock,
   CardMock,
@@ -377,4 +435,5 @@ export {
   vendorCardMock,
   projectCardTextsMock,
   textDisclosureAnimationProjectCardTextsMock,
+  StepInfoCardMock,
 }

@@ -3,6 +3,7 @@
 import { CardMock, ProjectCardMock } from '@/mocks/cards-mocks'
 import { Container } from '@/ui/container/container'
 import { ProjectCard } from '@/widgets/cards/project-card/project-card'
+import { ServiceCardHorizontal } from '@/widgets/cards/service-card-horizontal/service-card-horizontal'
 import { ServiceCard } from '@/widgets/cards/service-card/service-card'
 import { ServiceSnippetCard } from '@/widgets/cards/service-snippet/service-snippet'
 import { TextDisclosureAnimationProjectCard } from '@/widgets/cards/text-disclosure-animation-project-card/text-disclosure-animation-project-card'
@@ -10,7 +11,7 @@ import { VendorCard } from '@/widgets/cards/vendor-card/vendor-card'
 
 const CardsView = () => {
   return (
-    <Container padding='custom' variant='div'>
+    <Container className='pt-10' padding='custom' variant='div'>
       <ServiceCard
         image={CardMock.image}
         title={CardMock.title}
@@ -51,6 +52,7 @@ const CardsView = () => {
         description_long={ProjectCardMock.description_long}
         description={ProjectCardMock.description}
       />
+      <ServiceCardHorizontal />
     </Container>
   )
 }

@@ -307,7 +307,69 @@ const textDisclosureAnimationProjectCardTextsMock = {
       `,
 }
 
+const ServiceCardHorizontalMock = {
+  title: 'Горизонтальная карточка',
+  linkToCode:
+    'https://github.com/alimbaeva/components/tree/main/src/widgets/cards/service-card-horizontal/service-card-horizontal.tsx',
+
+  titleCard: 'Озеленение фитнес-клубов',
+  descriptionCard:
+    'Создаем здоровый микроклимат в тренировочных зонах и стильное оформление входных групп с использованием выносливых растений.',
+  imageCard: '/images/moun-1.avif',
+  descriptionContent: `
+      <h3>Анализ архитектуры компонента</h3>
+      <p>
+      Карточка построена на принципе <strong>Flex-Row</strong> с жестким разделением на визуальную и информационную зоны, обеспечивая стабильность макета при динамическом наполнении.
+      </p>
+
+      <h3>1. Работа с изображениями и пространством</h3>
+      <ul>
+          <li><strong>Контейнер Image (w-[50%] shrink-0):</strong> Использование <code>shrink-0</code> критически важно. Это гарантирует, что при длинном тексте в правой части изображение не "схлопнется", сохраняя ровно половину ширины карточки.</li>
+          <li><strong>Адаптивные размеры (sizes):</strong> Правильное использование <code>sizes</code> (100vw на мобилках / 50vw на десктопе) позволяет Next.js отдавать оптимизированную версию картинки, экономя до 70% трафика.</li>
+          <li><strong>Эстетика закруглений:</strong> Вложенный <code>rounded-2xl</code> на контейнере изображения внутри <code>rounded-2xl</code> родителя — стандарт 2026 года, создающий "эффект матрешки" без визуальных артефактов на стыках.</li>
+      </ul>
+
+      <h3>2. Типографика и управление контентом</h3>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+          <thead>
+              <tr style="border-bottom: 2px solid #eee;">
+                  <th style="text-align: left; padding: 8px;">Инструмент</th>
+                  <th style="text-align: left; padding: 8px;">Назначение</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 8px;"><code>line-clamp-2</code></td>
+                  <td style="padding: 8px;">Предотвращает разрушение сетки, обрезая текст заголовка на второй строке.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 8px;"><code>mt-auto</code></td>
+                  <td style="padding: 8px;">"Прижимает" кнопку к низу, выравнивая футеры всех карточек в ряду, даже если текста мало.</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                  <td style="padding: 8px;"><code>space-y-4</code></td>
+                  <td style="padding: 8px;">Управляет вертикальным ритмом между заголовком и описанием без лишних паддингов.</td>
+              </tr>
+          </tbody>
+      </table>
+
+      <h3>3. Критические точки (На что обратить внимание)</h3>
+      <ul>
+          <li><strong>Контрастность (Neutral-700/30):</strong> Полупрозрачный фон на темных темах требует проверки accessibility (WCAG). Если <code>text-positive-900</code> недостаточно яркий, текст станет нечитаемым.</li>
+          <li><strong>Мобильная верстка:</strong> В коде указано <code>flex-row</code> для всех разрешений. На узких экранах (320px) изображение 50% оставит слишком мало места для текста. Рекомендуется <code>flex-col md:flex-row</code>.</li>
+          <li><strong>Производительность:</strong> Класс <code>group</code> намекает на будущие hover-эффекты. Не забудьте добавить <code>will-change-transform</code>, если планируете сложную анимацию при наведении.</li>
+      </ul>
+
+      <h3>📋 Рекомендации 2026</h3>
+      <p>
+      ✅ <strong>Семантика:</strong> Используйте <code>article</code> (как в коде) — это правильно для SEO, так как карточка является самостоятельной единицей контента.<br/>
+      ✅ <strong>Стилизация:</strong> Переходите на именованные цвета через CSS переменные (<code>text-(--brand-primary)</code>) для легкой поддержки темной/светлой темы.<br/>
+      ✅ <strong>Интерактив:</strong> Добавьте <code>after:absolute after:inset-0</code> на кнопку или ссылку, чтобы сделать всю область карточки кликабельной без вложенных <code>&lt;a&gt;</code>.
+      </p>
+  `,
+}
 export {
+  ServiceCardHorizontalMock,
   CardMock,
   ProjectCardMock,
   serviceCardMock,

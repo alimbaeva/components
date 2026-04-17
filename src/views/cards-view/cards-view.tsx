@@ -6,6 +6,7 @@ import { ProjectCard } from '@/widgets/cards/project-card/project-card'
 import { ServiceCardHorizontal } from '@/widgets/cards/service-card-horizontal/service-card-horizontal'
 import { ServiceCard } from '@/widgets/cards/service-card/service-card'
 import { ServiceSnippetCard } from '@/widgets/cards/service-snippet/service-snippet'
+import { StepInfoCard } from '@/widgets/cards/step-info-card/step-info-card'
 import { TextDisclosureAnimationProjectCard } from '@/widgets/cards/text-disclosure-animation-project-card/text-disclosure-animation-project-card'
 import { VendorCard } from '@/widgets/cards/vendor-card/vendor-card'
 
@@ -53,6 +54,7 @@ const CardsView = () => {
         description={ProjectCardMock.description}
       />
       <ServiceCardHorizontal />
+      <StepInfoCard />
     </Container>
   )
 }

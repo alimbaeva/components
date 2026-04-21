@@ -86,7 +86,7 @@ const HorizontalCarousel = (props: Props) => {
             className={cn(
               'pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden sm:block',
               'w-[17%]',
-              'bg-[linear-gradient(270deg,#FEFEFE_28.85%,rgba(254,254,254,0)_100%)]',
+              'bg-[linear-gradient(270deg,#FEFEFE_65%,rgba(254,254,254,0)_100%)]',
             )}
           />
         )}

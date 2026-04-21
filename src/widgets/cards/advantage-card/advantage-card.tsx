@@ -14,7 +14,7 @@ const AdvantageCard = (props: Props) => {
     <article
       className={cn(
         'relative h-40 overflow-hidden',
-        'bg-bg-secondary rounded-2xl',
+        'rounded-2xl bg-neutral-700',
         'flex flex-col gap-4 md:gap-5',
         size == 'sm'
           ? 'px-3 py-7 md:px-5 md:py-9'
@@ -38,14 +38,14 @@ const AdvantageCard = (props: Props) => {
       </div>
       {icon && icon}
       {index && (
-        <div className='bg-charcoal flex size-9 items-center justify-center rounded-full text-[16px] font-[700] text-white md:text-[20px]'>
+        <div className='bg-overlay-black-800 flex size-9 items-center justify-center rounded-full text-[16px] font-[700] text-white md:text-[18px]'>
           {index}
         </div>
       )}
 
       <div className='space-y-2'>
-        <Title text={title} />
-        <Paragraph text={description ?? ''} />
+        <Title type='minimal' text={title} />
+        <Paragraph type='normal_16' text={description ?? ''} />
       </div>
     </article>
   )

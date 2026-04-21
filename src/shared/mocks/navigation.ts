@@ -35,6 +35,10 @@ const navigationMock = [
         label: 'Hover to Switch Gallery',
         link: '#hover-gallery',
       },
+      {
+        label: 'За рамки родителя в бесконечность',
+        link: '#edge-to-edge',
+      },
     ],
   },
   {

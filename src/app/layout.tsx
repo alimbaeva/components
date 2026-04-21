@@ -20,7 +20,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang='ru'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`overflow-x-hidden ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
         <main className='flex min-h-screen w-full flex-col lg:flex-row'>
